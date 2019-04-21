@@ -20,8 +20,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/findstr.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="581">
-                  <caret line="155" column="11" selection-start-line="155" selection-start-column="11" selection-end-line="155" selection-end-column="11" />
+                <state relative-caret-position="626">
+                  <caret line="366" column="9" lean-forward="true" selection-start-line="366" selection-start-column="9" selection-end-line="366" selection-end-column="9" />
                 </state>
               </provider>
             </entry>
@@ -53,6 +53,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>bcccaabca</find>
+      <find>PLGGiEwPuFPrqlfnyYCqFrsKJRcJoCTEEvaGyWgXgCzSKDoHvmZGcOLPeyQLIwnzzfjGR</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -170,34 +171,34 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_in_findstr_py - 2019.04.21 at 22h 38m 12s.xml">
+    <history-entry file="Unittests_in_findstr_py - 2019.04.21 at 23h 06m 27s.xml">
       <configuration name="Unittests in findstr.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_findstr_py - 2019.04.21 at 22h 40m 00s.xml">
+    <history-entry file="Unittests_in_findstr_py - 2019.04.21 at 23h 08m 03s.xml">
       <configuration name="Unittests in findstr.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_findstr_py - 2019.04.21 at 22h 40m 30s.xml">
+    <history-entry file="Unittests_in_findstr_py - 2019.04.21 at 23h 09m 06s.xml">
       <configuration name="Unittests in findstr.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_findstr_py - 2019.04.21 at 22h 40m 52s.xml">
+    <history-entry file="Unittests_in_findstr_py - 2019.04.21 at 23h 09m 54s.xml">
       <configuration name="Unittests in findstr.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_findstr_py - 2019.04.21 at 22h 42m 56s.xml">
+    <history-entry file="Unittests_in_findstr_py - 2019.04.21 at 23h 12m 48s.xml">
       <configuration name="Unittests in findstr.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_findstr_py - 2019.04.21 at 22h 43m 47s.xml">
+    <history-entry file="Unittests_in_findstr_py - 2019.04.21 at 23h 14m 14s.xml">
       <configuration name="Unittests in findstr.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_findstr_py - 2019.04.21 at 22h 45m 47s.xml">
+    <history-entry file="Unittests_in_findstr_py - 2019.04.21 at 23h 15m 43s.xml">
       <configuration name="Unittests in findstr.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_findstr_py - 2019.04.21 at 22h 46m 27s.xml">
+    <history-entry file="Unittests_in_findstr_py - 2019.04.21 at 23h 16m 34s.xml">
       <configuration name="Unittests in findstr.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_findstr_py - 2019.04.21 at 22h 47m 49s.xml">
+    <history-entry file="Unittests_in_findstr_py - 2019.04.21 at 23h 16m 52s.xml">
       <configuration name="Unittests in findstr.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_findstr_py - 2019.04.21 at 22h 58m 43s.xml">
+    <history-entry file="Unittests_in_findstr_py - 2019.04.21 at 23h 17m 48s.xml">
       <configuration name="Unittests in findstr.py" configurationId="tests" />
     </history-entry>
   </component>
@@ -234,7 +235,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/findstr.py</url>
-          <line>372</line>
+          <line>375</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
@@ -264,8 +265,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/findstr.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="581">
-          <caret line="155" column="11" selection-start-line="155" selection-start-column="11" selection-end-line="155" selection-end-column="11" />
+        <state relative-caret-position="626">
+          <caret line="366" column="9" lean-forward="true" selection-start-line="366" selection-start-column="9" selection-end-line="366" selection-end-column="9" />
         </state>
       </provider>
     </entry>

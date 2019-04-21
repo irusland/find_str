@@ -177,14 +177,17 @@ class Tester(unittest.TestCase):
     def run_and_display(self, method, text, substr, testname, expected):
         with self.subTest(f'{method.__name__} on test \"{testname}\"'):
             actual = self.get_search_result_in_text(method, text, substr)
-            self.assert_result(expected, actual, msg=f'\n{text}\n{substr}')
+            self.assert_result(expected, actual, msg=f'\nTEXT: {text} :TEXT\n'
+            f'SUB: {substr} :SUB')
 
     @staticmethod
     def parse(test):
         data = test.readlines()
         answer = data[-1]
         text = data[0:len(data) - 1]
-        return ''.join(str(line) for line in text), answer
+        text_str = ''.join(str(line) for line in text)
+        text_str = text_str[0:len(text_str) - 1]
+        return text_str, answer
 
     def test_all(self):
         methods = [Finder.BruteForce,
@@ -351,7 +354,7 @@ class Tester(unittest.TestCase):
         tests_files = [
             ('big', 'tests/06.tst', 'tests/06.ans'),
             ('medium', 'tests/07.tst', 'tests/07.ans'),
-            ('long', 'tests/08.tst', 'tests/08.ans'),
+            ('long', 'tests/08.tst', 'tests/08.ans')
         ]
 
         for method in methods:

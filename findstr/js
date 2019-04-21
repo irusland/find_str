@@ -1,0 +1,367 @@
+var findString = (function () {
+  var bruteForce;
+
+  logToConsole = function( text ) {
+    console.log( text );
+  };
+
+  readFromFile = function( dir ) {
+    let fs = require( 'fs' );
+    return fs.readFileSync(dir).toString();
+  }
+
+  bruteForce = function( text, sample, title ) {
+    var timeStart = new Date();
+
+    var foundIndexes = new Array();
+    var collisions = 0;
+    for (var i = 0; i < text.length - sample.length + 1; i++) {
+      var logic = true;
+      for (var j = 0; j < sample.length; j++) {
+        if (text[i + j] != sample[j]) {
+          logic = false;
+          collisions++;
+          break;
+        }
+      }
+      if (logic) {
+        foundIndexes.push(i);
+      }
+    }
+
+    var timeStop = new Date();
+    var time = timeStop - timeStart;
+
+    var result = new Info( title, foundIndexes, collisions, time );
+
+    return result;
+  }
+
+  quadHashShift = function( i, sampleLength, currentHash, text ) {
+    var result = currentHash;
+    result -= Math.pow(text.charCodeAt(i - 1), 2);
+    result += Math.pow(text.charCodeAt(i + sampleLength - 1), 2);
+    return result;
+  }
+
+  quadHash = function( text, length ) {
+    var sum = 0;
+    for (var i = 0; i < length; i++) {
+      sum += Math.pow(text.charCodeAt(i), 2);
+    }
+    return sum;
+  }
+
+  linearHashShift = function( i, sampleLength, currentHash, text ) {
+    var result = currentHash;
+    result -= text.charCodeAt(i - 1);
+    result += text.charCodeAt(i + sampleLength - 1);
+    return result;
+  }
+
+  linearHash = function( text, length ) {
+    var sum = 0;
+    for (var i = 0; i < length; i++) {
+      sum += text.charCodeAt(i);
+    }
+    return sum;
+  }
+
+  rabinKarphHashShift = function( i, length, currentHash, text ) {
+    var result = currentHash;
+    result -= text.charCodeAt(i - 1) * Math.pow(2, length - 1);
+    result *= 2;
+    result += text.charCodeAt(i + length - 1);
+    return result;
+  }
+
+  rabinKarphHash = function( text, length ) {
+    var sum = 0;
+    for (var i = 0; i < length; i++) {
+      sum += text.charCodeAt(i) * Math.pow(2, length - i - 1);
+    }
+    return sum;
+  }
+
+  hashMethod = function( text, sample, getHash, hashShift, title ) {
+    var timeStart = new Date();
+
+    var foundIndexes = new Array();
+    var sampleHashSum = getHash( sample, sample.length );
+    var subtextHashSum = getHash( text, sample.length );
+    var collisions = 0;
+
+    for (var i = 0; i < text.length - sample.length + 1; i++) {
+      var logic = true;
+      if (i != 0) {
+        subtextHashSum = hashShift( i, sample.length, subtextHashSum, text );
+      }
+      if (sampleHashSum == subtextHashSum) {
+        for (var j = 0; j < sample.length; j++) {
+          if (text[i + j] != sample[j]) {
+            logic = false;
+            break;
+          }
+        }
+        if (logic) {
+          foundIndexes.push(i);
+        } else {
+          collisions++;
+        }
+      }
+    }
+
+    var timeStop = new Date();
+    var time = timeStop - timeStart;
+
+    return  new Info( title, foundIndexes, collisions, time );
+  }
+
+  automate = function( text, sample, title ) {
+    var timeStart = new Date();
+
+    var foundIndexes = new Array();
+    var collisions = 0;
+    let length = sample.length;
+    let alphabet = new Array();
+
+    for(var i = 0; i < length; i++)
+      alphabet[sample.charAt(i)] = 0;
+
+    let table = new Array(length + 1);
+    for(var j = 0; j <= length; j++)
+      table[j] = new Array();
+
+    for(i in alphabet)
+      table[0][i] = 0;
+
+    for(var j = 0; j < length; j++) {
+      prev = table[j][sample.charAt(j)];
+      table[j][sample.charAt(j)] = j+1;
+      for(i in alphabet)
+        table[j + 1][i] = table[prev][i];
+    }
+
+    var currentState = 0;
+    var sampleLength = sample.length;
+    for (var i = 0; i < text.length; i++) {
+      if (table[currentState][text.charAt(i)] === undefined) {
+        collisions++;
+        currentState = 0;
+        continue;
+      }
+      currentState = table[currentState][text.charAt(i)];
+      if (currentState == sampleLength)
+        foundIndexes.push(i - sampleLength + 1);
+    }
+
+    var timeStop = new Date();
+    var time = timeStop - timeStart;
+
+    return new Info( title, foundIndexes, collisions, time );
+  }
+
+  /* BOYERE MOORE */
+  /* BOYERE MOORE */
+  /* BOYERE MOORE */
+  function GetTableOfLastCharAppearance(pattern) {
+    var table = new Array();
+    var m = pattern.length;
+    for (var i = 0; i < m - 1; i++) {
+      table[pattern.charAt(i)] = m - 1 - i;
+    }
+    return table;
+  }
+
+  function IsEqual(str1, a, b, str2, m) {
+    for (var k = a; k <= b; k++) {
+      if (str1.charAt(k) == '*') {
+        m++;
+        continue;
+      }
+      if (str1.charAt(k) != str2.charAt(m)) {
+        return false;
+      } else {
+        m++;
+      }
+    }
+    return true;
+  }
+
+  function GetRPRTable(T) {
+    var m = T.length;
+    var rpr = new Array();
+    var Tx = ('*').repeat(T.length) + T;
+    for (var l = 0; l <= m; l++) {
+      for (var k = m - l + 1; k >= 1 - m; k--) {
+        if (IsEqual(Tx, k + m - 1, k + m + l - 2, T, m - l) &&
+          ((k - 2 >= 0 && T.charAt(k - 2) != T.charAt(m - l - 1)) || k - 2 < 0) &&
+          !(l == m && k == 1)) {
+          rpr[l] = k;
+          break;
+        }
+      }
+    }
+    return rpr;
+  }
+
+  function GetShiftTable(rpr, pattern) {
+    var m = pattern.length;
+    var Shift = new Array();
+    for (var l = 0; l < m + 1; l++) {
+      Shift[l] = m - rpr[l] - l + 1;
+    }
+    return Shift;
+  }
+
+  function BoyereMoore(text, pattern, title) {
+    var timeStart = new Date();
+
+    var BCTable = GetTableOfLastCharAppearance(pattern);
+    var rpr = GetRPRTable(pattern);
+    var GSTable = GetShiftTable(rpr, pattern);
+
+    var collisions = 0;
+    var m = pattern.length;
+    var i = 0;
+    var matchStreak = 0;
+    var execute = true;
+    var indexes = new Array();
+    while (execute) {
+      if (pattern == '') {
+        for (var s = 0; s < text.length; s++) {
+            indexes.push(s);
+        }
+        execute = false;
+      }
+      if (i + m > text.length) {
+          execute = false;
+          break;
+      }
+      for (var j = i + m - 1; j >= i; j--) {
+        if (text[j] == pattern[j - i]) {
+            matchStreak++;
+            if (matchStreak == m) {
+                indexes.push(i);
+                i += GSTable[matchStreak];
+                matchStreak = 0;
+                break;
+            }
+        } else {
+          if (matchStreak == 0) {
+            if (BCTable[text[j]] == undefined)
+              i += m;
+            else
+              i += BCTable[text[j]];
+          } else {
+            collisions++;
+            i += GSTable[matchStreak];
+          }
+          matchStreak = 0;
+          break;
+        }
+      }
+    }
+
+    var timeStop = new Date();
+    var time = timeStop - timeStart;
+
+    return new Info( title, indexes, collisions, time );
+  }
+  /* BOYERE MOORE */
+  /* BOYERE MOORE */
+  /* BOYERE MOORE */
+
+  function Info( title, foundIndexes, collisions, time ) {
+    this.title = title;
+    this.foundIndexes = foundIndexes;
+    this.collisions = collisions;
+    this.time = time;
+  }
+
+  Info.prototype.log = function() {
+    var length = this.foundIndexes.length;
+    var occurrencesFound = length;
+    var foundIndexes = new Array();
+    var accuracy = 3;
+    var lim = Math.min(length, accuracy);
+
+    for (var i = 0; i < lim; i++)
+      foundIndexes.push(this.foundIndexes[i]);
+
+    if (length > accuracy)
+      var dots = '...';
+    else
+      var dots = '';
+    this.time /= 1000;
+
+    console.log('       method ' + this.title);
+    console.log('     found on ' + foundIndexes + dots);
+    console.log('indexes count ' + occurrencesFound);
+    console.log('   collisions ' + this.collisions);
+    console.log('         time ' + this.time);
+    console.log('\n');
+  }
+
+  return {
+    bruteForce: function( textDir, sampleDir ) {
+      var text   = readFromFile(textDir);
+      var sample = readFromFile(sampleDir);
+      var title = 'Brute Force';
+      return bruteForce(text, sample, title);
+    },
+
+    getLinearHashResult: function( textDir, sampleDir ) {
+      var text   = readFromFile(textDir);
+      var sample = readFromFile(sampleDir)
+      var title = 'linear hashing';
+      return hashMethod(text, sample, linearHash, linearHashShift, title );
+    },
+
+    getQuadHashResult: function( textDir, sampleDir ) {
+      var text   = readFromFile(textDir);
+      var sample = readFromFile(sampleDir)
+      var title = 'quadratic hashing';
+      return hashMethod( text, sample, quadHash, quadHashShift, title );
+    },
+
+    getRabinKarphHashResult: function( textDir, sampleDir ) {
+      var text   = readFromFile(textDir);
+      var sample = readFromFile(sampleDir)
+      var title = 'Rabin-Karph hashing';
+      return hashMethod( text, sample, rabinKarphHash, rabinKarphHashShift, title );
+    },
+
+    getAutomateResult: function( textDir, sampleDir ) {
+      var text   = readFromFile(textDir);
+      var sample = readFromFile(sampleDir)
+      var title = 'Automate';
+      return automate( text, sample, title );
+    },
+    getBoyereMooreResult: function( textDir, sampleDir ) {
+      var text   = readFromFile(textDir);
+      var sample = readFromFile(sampleDir)
+      var title = 'Boyere Moore';
+      return BoyereMoore( text, sample, title );
+    },
+  };
+})();
+
+
+var inputDir = 'text.txt';
+var sampleDir = 'template.txt';
+
+var bruteForce = findString.bruteForce( inputDir, sampleDir );
+var linearHash = findString.getLinearHashResult( inputDir, sampleDir );
+var quadHash = findString.getQuadHashResult( inputDir, sampleDir );
+var rabinKarphHash = findString.getRabinKarphHashResult( inputDir, sampleDir );
+var automate = findString.getAutomateResult( inputDir, sampleDir );
+var boyeremoore = findString.getBoyereMooreResult( inputDir, sampleDir );
+
+console.clear();
+bruteForce.log();
+linearHash.log();
+quadHash.log();
+rabinKarphHash.log();
+automate.log();
+boyeremoore.log();

@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f3bba32f-3c76-4fd7-a224-5ff60cd82aa2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/findstr.py" beforeDir="false" afterPath="$PROJECT_DIR$/findstr.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -10,6 +11,9 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="findstr" />
+  </component>
   <component name="FileEditorManager">
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
@@ -17,8 +21,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/findstr.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="711">
-                  <caret line="253" column="54" selection-start-line="253" selection-start-column="54" selection-end-line="253" selection-end-column="54" />
+                <state relative-caret-position="-2736">
+                  <caret line="184" column="31" lean-forward="true" selection-end-line="377" />
                 </state>
               </provider>
             </entry>
@@ -30,8 +34,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="253">
-                  <caret line="297" column="22" selection-start-line="297" selection-start-column="22" selection-end-line="297" selection-end-column="22" />
+                <state relative-caret-position="350">
+                  <caret line="69" selection-start-line="69" selection-end-line="83" selection-end-column="3" />
                 </state>
               </provider>
             </entry>
@@ -47,6 +51,11 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>bcccaabca</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
@@ -59,10 +68,9 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="23" />
-    <option name="width" value="1440" />
-    <option name="height" value="877" />
+  <component name="ProjectFrameBounds">
+    <option name="width" value="2560" />
+    <option name="height" value="1440" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -87,7 +95,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.findstr">
     <configuration name="findstr" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="findstr" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -109,6 +117,40 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Unittests in findstr.py" type="tests" factoryName="Unittests" nameIsGenerated="true">
+      <module name="findstr" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_pattern" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/findstr.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <module name="findstr" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_pattern" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/findstr.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.findstr" />
+      <item itemvalue="Python tests.Unittests in findstr.py" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.findstr" />
@@ -128,16 +170,48 @@
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="Unittests_in_findstr_py - 2019.04.21 at 22h 36m 22s.xml">
+      <configuration name="Unittests in findstr.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_findstr_py - 2019.04.21 at 22h 38m 12s.xml">
+      <configuration name="Unittests in findstr.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_findstr_py - 2019.04.21 at 22h 40m 00s.xml">
+      <configuration name="Unittests in findstr.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_findstr_py - 2019.04.21 at 22h 40m 30s.xml">
+      <configuration name="Unittests in findstr.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_findstr_py - 2019.04.21 at 22h 40m 52s.xml">
+      <configuration name="Unittests in findstr.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_findstr_py - 2019.04.21 at 22h 42m 56s.xml">
+      <configuration name="Unittests in findstr.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_findstr_py - 2019.04.21 at 22h 43m 47s.xml">
+      <configuration name="Unittests in findstr.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_findstr_py - 2019.04.21 at 22h 45m 47s.xml">
+      <configuration name="Unittests in findstr.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_findstr_py - 2019.04.21 at 22h 46m 27s.xml">
+      <configuration name="Unittests in findstr.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_findstr_py - 2019.04.21 at 22h 47m 49s.xml">
+      <configuration name="Unittests in findstr.py" configurationId="tests" />
+    </history-entry>
+  </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="2560" height="1440" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.35024664" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.24990115" />
+      <window_info id="Favorites" order="2" side_tool="true" weight="0.32977462" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.26946566" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.26946566" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -151,6 +225,29 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/findstr.py</url>
+          <line>179</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/findstr.py</url>
+          <line>373</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/findstr">
       <provider selected="true" editor-type-id="text-editor">
@@ -161,15 +258,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="297" column="22" selection-start-line="297" selection-start-column="22" selection-end-line="297" selection-end-column="22" />
+        <state relative-caret-position="350">
+          <caret line="69" selection-start-line="69" selection-end-line="83" selection-end-column="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/findstr.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="711">
-          <caret line="253" column="54" selection-start-line="253" selection-start-column="54" selection-end-line="253" selection-end-column="54" />
+        <state relative-caret-position="-2736">
+          <caret line="184" column="31" lean-forward="true" selection-end-line="377" />
         </state>
       </provider>
     </entry>

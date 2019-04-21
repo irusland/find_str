@@ -44,7 +44,7 @@ class Finder:
 
     class Hash:
         @staticmethod
-        def search_linear(text, sample, get_hash, hash_shift):
+        def search(text, sample, get_hash, hash_shift):
             time_start = timer.time()
             found_indexes = []
             sample_hash_sum = get_hash(sample, len(sample))
@@ -75,8 +75,9 @@ class Finder:
         class Linear:
             @staticmethod
             def search(text, sample):
-                return Finder.Hash.search_linear(
-                    text, sample, Finder.Hash.Linear.get_hash,
+                return Finder.Hash.search(
+                    text, sample,
+                    Finder.Hash.Linear.get_hash,
                     Finder.Hash.Linear.hash_shift)
 
             @staticmethod
@@ -97,8 +98,9 @@ class Finder:
         class Quad:
             @staticmethod
             def search(text, sample):
-                return Finder.Hash.search_linear(
-                    text, sample, Finder.Hash.Quad.get_hash,
+                return Finder.Hash.search(
+                    text, sample,
+                    Finder.Hash.Quad.get_hash,
                     Finder.Hash.Quad.hash_shift)
 
             @staticmethod
@@ -119,7 +121,26 @@ class Finder:
         class RabinKarph:
             @staticmethod
             def search(text, sample):
-                pass
+                return Finder.Hash.search(
+                    text, sample,
+                    Finder.Hash.RabinKarph.get_hash,
+                    Finder.Hash.RabinKarph.hash_shift)
+
+            @staticmethod
+            def hash_shift(i, length, current_hash, text):
+                result = current_hash
+                result -= ord(text[i - 1]) * (2 ** (length - 1))
+                result *= 2
+                result += ord(text[i + length - 1])
+                return result
+
+            @staticmethod
+            def get_hash(text, length):
+                hash_sum = 0
+                for i in range(0, length):
+                    if i < len(text):
+                        hash_sum += ord(text[i]) * (2 ** (length - i - 1))
+                return hash_sum
 
     class Automate:
         @staticmethod
@@ -133,6 +154,7 @@ class Finder:
 
 
 def main():
+    Tester.test_all(Tester())
     pass
 
 
@@ -141,14 +163,13 @@ if __name__ == '__main__':
 
 
 class Tester(unittest.TestCase):
-    def assert_result(self, expected, actual):
+    def assert_result(self, expected, actual, msg):
         self.assertTrue(hasattr(expected, 'found_indexes'))
         self.assertTrue(hasattr(actual, 'found_indexes'))
 
-        self.assertEqual(len(expected.found_indexes),
-                         len(actual.found_indexes))
-        self.assertEqual(expected.found_indexes,
-                         actual.found_indexes)
+        self.assertListEqual(expected.found_indexes,
+                             actual.found_indexes,
+                             msg)
 
     def get_search_result_in_text(self, method, text, substring):
         self.assertTrue(hasattr(method, 'search'))
@@ -157,7 +178,14 @@ class Tester(unittest.TestCase):
     def run_and_display(self, method, text, substr, testname, expected):
         with self.subTest(f'{method.__name__} on test \"{testname}\"'):
             actual = self.get_search_result_in_text(method, text, substr)
-            self.assert_result(expected, actual)
+            self.assert_result(expected, actual, msg=f'\n{text}\n{substr}')
+
+    @staticmethod
+    def parse(test):
+        data = test.readlines()
+        answer = data[-1]
+        text = data[0:len(data) - 1]
+        return text, answer
 
     def test_all(self):
         methods = [Finder.BruteForce,
@@ -166,7 +194,7 @@ class Tester(unittest.TestCase):
                    Finder.Hash.RabinKarph,
                    Finder.Automate,
                    Finder.BoyereMoore]
-        tests = [
+        tests_strings = [
             (
                 '3 times substring',
                 'aaa',
@@ -231,11 +259,29 @@ class Tester(unittest.TestCase):
             ),
 
             (
-                '2 char overlay',
+                'triple overlay',
                 'aaaa',
                 'aa',
                 Result(
                     [0, 1, 2]
+                )
+            ),
+
+            (
+                'double overlay',
+                'aaaa',
+                'aaa',
+                Result(
+                    [0, 1]
+                )
+            ),
+
+            (
+                'single match',
+                'aaaba',
+                'aaa',
+                Result(
+                    [0]
                 )
             ),
 
@@ -246,11 +292,86 @@ class Tester(unittest.TestCase):
                 Result(
                     [0]
                 )
+            ),
+
+            (
+                'not found on last pos',
+                'abcabcab',
+                'abc',
+                Result(
+                    [0, 3]
+                )
+            ),
+
+            (
+                'template with separators',
+                'ab ab ab',
+                'ab',
+                Result(
+                    [0, 3, 6]
+                )
+            ),
+
+            (
+                'reverse repeated template',
+                'ababababababababab',
+                'bb',
+                Result(
+                    []
+                )
+            ),
+
+            (
+                'match',
+                'abbaabbaabbbabaabaabbabbaabbbaabbabbbbbbaaaabbaaabbaaaaaabb',
+                'aabba',
+                Result(
+                    [3, 17, 29, 42, 47]
+                )
+            ),
+
+            (
+                'no matches',
+                'baabbbbbbababababaaaaabbaababbbabaaaabbbbaabbaaaaaabbabbaabbbbaab',
+                'aaabab',
+                Result(
+                    []
+                )
+            ),
+
+            (
+                'chaotic',
+                'abaababbbabababbbbabababbbabbabbabaabaababbaaaabbbbababaabb',
+                'bbaba',
+                Result(
+                    [7, 16, 30, 49]
+                )
             )
+        ]
+
+        tests_files = [
+            ('big', 'tests/06.tst', 'tests/06.ans'),
+            ('medium', 'tests/07.tst', 'tests/07.ans'),
+            ('long', 'tests/08.tst', 'tests/08.ans'),
         ]
 
         for method in methods:
             # FIXME make a sub sub test group
             with self.subTest(f'{method.__name__} DONE'):
-                for testname, text, substr, expected in tests:
-                    self.run_and_display(method, text, substr, testname, expected)
+                for testname, text, substr, expected in tests_strings:
+                    self.run_and_display(method, text, substr,
+                                         testname, expected)
+
+                for testname, file_test, file_ans in tests_files:
+                    with open(file_test) as test:
+                        text, substr = Tester.parse(test)
+                        with open(file_ans) as answer:
+                            indexes = []
+                            for line in answer:
+                                number = line[0:len(line) - 1]
+                                if len(number) > 0:
+                                    indexes.append(int(number))
+                            expected = Result(indexes)
+                            self.run_and_display(method, text, substr,
+                                                 testname, expected)
+

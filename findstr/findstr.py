@@ -251,6 +251,6 @@ class Tester(unittest.TestCase):
 
         for method in methods:
             # FIXME make a sub sub test group
-            with self.subTest(f'{method.__name__} DONE ✅'):
+            with self.subTest(f'{method.__name__} DONE'):
                 for testname, text, substr, expected in tests:
                     self.run_and_display(method, text, substr, testname, expected)

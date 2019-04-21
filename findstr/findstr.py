@@ -154,7 +154,6 @@ class Finder:
 
 
 def main():
-    Tester.test_all(Tester())
     pass
 
 
@@ -185,7 +184,7 @@ class Tester(unittest.TestCase):
         data = test.readlines()
         answer = data[-1]
         text = data[0:len(data) - 1]
-        return text, answer
+        return ''.join(str(line) for line in text), answer
 
     def test_all(self):
         methods = [Finder.BruteForce,

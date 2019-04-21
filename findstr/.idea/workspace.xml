@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f3bba32f-3c76-4fd7-a224-5ff60cd82aa2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/findstr.py" beforeDir="false" afterPath="$PROJECT_DIR$/findstr.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,8 +20,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/findstr.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-2736">
-                  <caret line="184" column="31" lean-forward="true" selection-end-line="377" />
+                <state relative-caret-position="581">
+                  <caret line="155" column="11" selection-start-line="155" selection-start-column="11" selection-end-line="155" selection-end-column="11" />
                 </state>
               </provider>
             </entry>
@@ -95,7 +94,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.findstr">
+  <component name="RunManager" selected="Python tests.Unittests in findstr.py">
     <configuration name="findstr" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="findstr" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -171,9 +170,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_in_findstr_py - 2019.04.21 at 22h 36m 22s.xml">
-      <configuration name="Unittests in findstr.py" configurationId="tests" />
-    </history-entry>
     <history-entry file="Unittests_in_findstr_py - 2019.04.21 at 22h 38m 12s.xml">
       <configuration name="Unittests in findstr.py" configurationId="tests" />
     </history-entry>
@@ -201,6 +197,9 @@
     <history-entry file="Unittests_in_findstr_py - 2019.04.21 at 22h 47m 49s.xml">
       <configuration name="Unittests in findstr.py" configurationId="tests" />
     </history-entry>
+    <history-entry file="Unittests_in_findstr_py - 2019.04.21 at 22h 58m 43s.xml">
+      <configuration name="Unittests in findstr.py" configurationId="tests" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="2560" height="1440" extended-state="6" />
@@ -211,7 +210,7 @@
       <window_info id="Favorites" order="2" side_tool="true" weight="0.32977462" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.26946566" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.26946566" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -230,12 +229,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/findstr.py</url>
-          <line>179</line>
+          <line>178</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/findstr.py</url>
-          <line>373</line>
+          <line>372</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
@@ -265,8 +264,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/findstr.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2736">
-          <caret line="184" column="31" lean-forward="true" selection-end-line="377" />
+        <state relative-caret-position="581">
+          <caret line="155" column="11" selection-start-line="155" selection-start-column="11" selection-end-line="155" selection-end-column="11" />
         </state>
       </provider>
     </entry>

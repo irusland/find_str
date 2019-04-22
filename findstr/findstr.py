@@ -1,6 +1,5 @@
 import time as timer
 import unittest
-import inspect
 
 
 class Result:
@@ -88,11 +87,11 @@ class Finder:
 
             @staticmethod
             def get_hash(text, length):
-                sum = 0
+                hash_sum = 0
                 for i in range(0, length):
                     if i < len(text):
-                        sum += ord(text[i])
-                return sum
+                        hash_sum += ord(text[i])
+                return hash_sum
 
         class Quad:
             @staticmethod
@@ -185,7 +184,7 @@ class Finder:
 
     class BoyereMoore:
         @staticmethod
-        def GetTableOfLastCharAppearance(pattern):
+        def get_table_of_last_char_appearance(pattern):
             table = {}
             m = len(pattern)
             for i in range(0, m - 1):
@@ -193,7 +192,7 @@ class Finder:
             return table
 
         @staticmethod
-        def IsEqual(str1, a, b, str2, m):
+        def is_equal(str1, a, b, str2, m):
             for k in range(a, b + 1):
                 if str1[k] == '*':
                     m += 1
@@ -205,29 +204,26 @@ class Finder:
             return True
 
         @staticmethod
-        def GetRPRTable(T):
-            m = len(T)
+        def get_rpr_table(t):
+            m = len(t)
             rpr = {}
-            Tx = ('*' * len(T)) + T
-            for l in range(0, m + 2):
-                for k in range(m - l + 1, 1 - m, -1):
-                    if (Finder.BoyereMoore.IsEqual(
-                        Tx, k + m - 1, k + m + l - 2, T, m - l)
-                        and ((k - 2 >= 0 and T[k - 2] != T[m - l - 1])
-                        or k - 2 < 0) and (l != m or k != 1)):
-                        rpr[l] = k
+            tx = ('*' * len(t)) + t
+            for p in range(0, m + 1):
+                for k in range(m - p + 1, 1 - m - 1, -1):
+                    is_bs = Finder.BoyereMoore.is_equal(
+                        tx, k + m - 1, k + m + p - 2, t, m - p)
+                    if (is_bs and ((k - 2 >= 0 and t[k - 2] != t[m - p - 1])
+                                   or k - 2 < 0) and (p != m or k != 1)):
+                        rpr[p] = k
                         break
             return rpr
 
         @staticmethod
-        def GetShiftTable(rpr, pattern):
+        def get_shift_table(rpr, pattern):
             m = len(pattern)
             shift = {}
             for l in range(0, m + 1):
-                if l not in rpr.keys():
-                    shift[l] = 1
-                else:
-                    shift[l] = m - rpr[l] - l + 1
+                shift[l] = m - rpr[l] - l + 1
             return shift
 
         @staticmethod
@@ -236,9 +232,9 @@ class Finder:
             time_start = timer.time()
 
             bc_table = \
-                Finder.BoyereMoore.GetTableOfLastCharAppearance(pattern)
-            rpr = Finder.BoyereMoore.GetRPRTable(pattern)
-            gs_table = Finder.BoyereMoore.GetShiftTable(rpr, pattern)
+                Finder.BoyereMoore.get_table_of_last_char_appearance(pattern)
+            rpr = Finder.BoyereMoore.get_rpr_table(pattern)
+            gs_table = Finder.BoyereMoore.get_shift_table(rpr, pattern)
 
             collisions = 0
             m = len(pattern)
@@ -252,9 +248,8 @@ class Finder:
                         indexes.append(s)
                     execute = False
                 if i + m > len(text):
-                    execute = False
                     break
-                for j in range(i + m - 1, i, -1):
+                for j in range(i + m - 1, i - 1, -1):
                     if text[j] == pattern[j - i]:
                         match_streak += 1
                         if match_streak == m:
@@ -282,17 +277,16 @@ class Finder:
 
 def main():
     methods = [
-        # Finder.BruteForce,
-        # Finder.Hash.Linear,
-        # Finder.Hash.Quad,
-        # Finder.Hash.RabinKarph,
-        # Finder.Automate,
+        Finder.BruteForce,
+        Finder.Hash.Linear,
+        Finder.Hash.Quad,
+        Finder.Hash.RabinKarph,
+        Finder.Automate,
         Finder.BoyereMoore
     ]
     for method in methods:
-        result = method.search('ÆÆÆ', 'Æ')
+        result = method.search('A', 'A')
         result.log()
-
 
 
 if __name__ == '__main__':
@@ -312,11 +306,11 @@ class Tester(unittest.TestCase):
         self.assertTrue(hasattr(method, 'search'))
         return method.search(text, substring)
 
-    def run_and_display(self, method, text, substr, testname, expected):
-        with self.subTest(f'{method.__name__} on test \"{testname}\"'):
-            actual = self.get_search_result_in_text(method, text, substr)
-            self.assert_result(expected, actual, msg=f'\nTEXT: {text} :TEXT\n'
-            f'SUB: {substr} :SUB')
+    def run_and_display(self, method, text, sub_string, test_name, expected):
+        with self.subTest(f'{method.__name__} on test \"{test_name}\"'):
+            actual = self.get_search_result_in_text(method, text, sub_string)
+            msg = f'\nTEXT: {text} :TEXT\nSUB: {sub_string} :SUB'
+            self.assert_result(expected, actual, msg)
 
     @staticmethod
     def parse(test):
@@ -442,11 +436,11 @@ class Tester(unittest.TestCase):
 
             (
                 'no matches',
-                'baabbbbbbababababaaaaabbaababbbabaaaabbbbaabbaaaaaabbabbaabbbbaab',
+                'baabbbbbbababababaaaaabbaababbbabaa'
+                'aabbbbaabbaaaaaabbabbaabbbbaab',
                 'aaabab',
                 []
-            )
-            ,
+            ),
 
             (
                 'chaotic',
@@ -465,13 +459,13 @@ class Tester(unittest.TestCase):
         for method in methods:
             # FIXME make a sub sub test group
             with self.subTest(f'{method.__name__} DONE'):
-                for testname, text, substr, expected in tests_strings:
-                    self.run_and_display(method, text, substr,
-                                         testname, Result(expected))
+                for test_name, text, sub_string, expected in tests_strings:
+                    self.run_and_display(method, text, sub_string,
+                                         test_name, Result(expected))
 
-                for testname, file_test, file_ans in tests_files:
+                for test_name, file_test, file_ans in tests_files:
                     with open(file_test) as test:
-                        text, substr = Tester.parse(test)
+                        text, sub_string = Tester.parse(test)
                         with open(file_ans) as answer:
                             indexes = []
                             for line in answer:
@@ -479,6 +473,5 @@ class Tester(unittest.TestCase):
                                 if len(number) > 0:
                                     indexes.append(int(number))
                             expected = Result(indexes)
-                            self.run_and_display(method, text, substr,
-                                                 testname, expected)
-
+                            self.run_and_display(method, text, sub_string,
+                                                 test_name, expected)

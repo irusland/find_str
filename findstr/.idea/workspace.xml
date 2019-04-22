@@ -15,34 +15,20 @@
     <favorites_list name="findstr" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/findstr.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="587">
-                  <caret line="341" column="13" selection-start-line="341" selection-start-column="13" selection-end-line="341" selection-end-column="13" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-1745">
-                  <caret line="161" column="3" lean-forward="true" selection-start-line="119" selection-start-column="2" selection-end-line="161" selection-end-column="3" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/findstr.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="251">
+              <caret line="451" lean-forward="true" selection-start-line="451" selection-end-line="451" />
+              <folding>
+                <element signature="e#0#20#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -169,37 +155,45 @@
       <option name="presentableId" value="Default" />
       <updated>1555394808165</updated>
     </task>
+    <task id="LOCAL-00001" summary="BM added with some RPR bugs">
+      <created>1555934837310</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1555934837310</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_in_findstr_py - 2019.04.21 at 23h 15m 43s.xml">
+    <history-entry file="Unittests_in_findstr_py - 2019.04.22 at 16h 55m 39s.xml">
       <configuration name="Unittests in findstr.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_findstr_py - 2019.04.21 at 23h 16m 34s.xml">
+    <history-entry file="Unittests_in_findstr_py - 2019.04.22 at 16h 59m 49s.xml">
       <configuration name="Unittests in findstr.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_findstr_py - 2019.04.21 at 23h 16m 52s.xml">
+    <history-entry file="Unittests_in_findstr_py - 2019.04.22 at 17h 05m 37s.xml">
       <configuration name="Unittests in findstr.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_findstr_py - 2019.04.21 at 23h 17m 48s.xml">
+    <history-entry file="Unittests_in_findstr_py - 2019.04.22 at 17h 05m 46s.xml">
       <configuration name="Unittests in findstr.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_findstr_py - 2019.04.22 at 14h 38m 21s.xml">
+    <history-entry file="Unittests_in_findstr_py - 2019.04.22 at 17h 06m 13s.xml">
       <configuration name="Unittests in findstr.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_findstr_py - 2019.04.22 at 14h 39m 56s.xml">
+    <history-entry file="Unittests_in_findstr_py - 2019.04.22 at 17h 16m 44s.xml">
       <configuration name="Unittests in findstr.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_findstr_py - 2019.04.22 at 14h 40m 20s.xml">
+    <history-entry file="Unittests_in_findstr_py - 2019.04.22 at 17h 22m 36s.xml">
       <configuration name="Unittests in findstr.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_findstr_py - 2019.04.22 at 14h 40m 42s.xml">
+    <history-entry file="Unittests_in_findstr_py - 2019.04.22 at 17h 29m 40s.xml">
       <configuration name="Unittests in findstr.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_findstr_py - 2019.04.22 at 14h 44m 29s.xml">
+    <history-entry file="Unittests_in_findstr_py - 2019.04.22 at 17h 30m 31s.xml">
       <configuration name="Unittests in findstr.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_findstr_py - 2019.04.22 at 14h 45m 38s.xml">
+    <history-entry file="Unittests_in_findstr_py - 2019.04.22 at 17h 31m 14s.xml">
       <configuration name="Unittests in findstr.py" configurationId="tests" />
     </history-entry>
   </component>
@@ -211,7 +205,7 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.24990115" />
       <window_info id="Favorites" order="2" side_tool="true" weight="0.32977462" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32977098" />
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.26946566" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -226,20 +220,12 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="BM added with some RPR bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="BM added with some RPR bugs" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/findstr.py</url>
-          <line>223</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/findstr.py</url>
-          <line>420</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">
@@ -257,17 +243,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/codecs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="308" selection-start-line="308" selection-end-line="308" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1745">
-          <caret line="161" column="3" lean-forward="true" selection-start-line="119" selection-start-column="2" selection-end-line="161" selection-end-column="3" />
+        <state relative-caret-position="-186">
+          <caret line="212" column="5" lean-forward="true" selection-start-line="212" selection-start-column="5" selection-end-line="212" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/findstr.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="587">
-          <caret line="341" column="13" selection-start-line="341" selection-start-column="13" selection-end-line="341" selection-end-column="13" />
+        <state relative-caret-position="251">
+          <caret line="451" lean-forward="true" selection-start-line="451" selection-end-line="451" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

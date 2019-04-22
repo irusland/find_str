@@ -185,17 +185,110 @@ class Finder:
 
     class BoyereMoore:
         @staticmethod
-        def search(text, sample):
-            pass
+        def GetTableOfLastCharAppearance(pattern):
+            table = {}
+            m = len(pattern)
+            for i in range(0, m - 1):
+                table[pattern[i]] = m - 1 - i
+            return table
+
+        @staticmethod
+        def IsEqual(str1, a, b, str2, m):
+            for k in range(a, b + 1):
+                if str1[k] == '*':
+                    m += 1
+                    continue
+                if str1[k] != str2[m]:
+                    return False
+                else:
+                    m += 1
+            return True
+
+        @staticmethod
+        def GetRPRTable(T):
+            m = len(T)
+            rpr = {}
+            Tx = ('*' * len(T)) + T
+            for l in range(0, m + 2):
+                for k in range(m - l + 1, 1 - m, -1):
+                    if (Finder.BoyereMoore.IsEqual(
+                        Tx, k + m - 1, k + m + l - 2, T, m - l)
+                        and ((k - 2 >= 0 and T[k - 2] != T[m - l - 1])
+                        or k - 2 < 0) and (l != m or k != 1)):
+                        rpr[l] = k
+                        break
+            return rpr
+
+        @staticmethod
+        def GetShiftTable(rpr, pattern):
+            m = len(pattern)
+            shift = {}
+            for l in range(0, m + 1):
+                if l not in rpr.keys():
+                    shift[l] = 1
+                else:
+                    shift[l] = m - rpr[l] - l + 1
+            return shift
+
+        @staticmethod
+        def search(text, pattern):
+            title = 'Boyer moore'
+            time_start = timer.time()
+
+            bc_table = \
+                Finder.BoyereMoore.GetTableOfLastCharAppearance(pattern)
+            rpr = Finder.BoyereMoore.GetRPRTable(pattern)
+            gs_table = Finder.BoyereMoore.GetShiftTable(rpr, pattern)
+
+            collisions = 0
+            m = len(pattern)
+            i = 0
+            match_streak = 0
+            execute = True
+            indexes = []
+            while execute:
+                if pattern == '':
+                    for s in range(0, text.length):
+                        indexes.append(s)
+                    execute = False
+                if i + m > len(text):
+                    execute = False
+                    break
+                for j in range(i + m - 1, i, -1):
+                    if text[j] == pattern[j - i]:
+                        match_streak += 1
+                        if match_streak == m:
+                            indexes.append(i)
+                            i += gs_table[match_streak]
+                            match_streak = 0
+                            break
+                    else:
+                        if match_streak == 0:
+                            if text[j] not in bc_table.keys():
+                                i += m
+                            else:
+                                i += bc_table[text[j]]
+                        else:
+                            collisions += 1
+                            i += gs_table[match_streak]
+                        match_streak = 0
+                        break
+
+            time_stop = timer.time()
+            time = time_stop - time_start
+
+            return Result(indexes, collisions, time, title)
 
 
 def main():
-    methods = [Finder.BruteForce,
-               Finder.Hash.Linear,
-               Finder.Hash.Quad,
-               Finder.Hash.RabinKarph,
-               Finder.Automate,
-               Finder.BoyereMoore]
+    methods = [
+        # Finder.BruteForce,
+        # Finder.Hash.Linear,
+        # Finder.Hash.Quad,
+        # Finder.Hash.RabinKarph,
+        # Finder.Automate,
+        Finder.BoyereMoore
+    ]
     for method in methods:
         result = method.search('ÆÆÆ', 'Æ')
         result.log()
@@ -246,153 +339,120 @@ class Tester(unittest.TestCase):
                 '3 times substring',
                 'aaa',
                 'a',
-                Result(
-                    [0, 1, 2]
-                )
+                [0, 1, 2]
             ),
 
             (
                 '2 times substring',
                 'aba',
                 'a',
-                Result(
-                    [0, 2]
-                )
+                [0, 2]
             ),
 
             (
                 'nothing found',
                 'b',
                 'a',
-                Result(
-                    []
-                )
+                []
             ),
 
             (
                 'nothing to search in',
                 '',
                 'a',
-                Result(
-                    []
-                )
+                []
             ),
 
             (
                 'one match',
                 'a',
                 'a',
-                Result(
-                    [0]
-                )
+                [0]
             ),
 
             (
                 'more than exists',
                 'a',
                 'aa',
-                Result(
-                    []
-                )
+                []
             ),
 
             (
                 'one 2 char match',
                 'aa',
                 'aa',
-                Result(
-                    [0]
-                )
+                [0]
             ),
 
             (
                 'triple overlay',
                 'aaaa',
                 'aa',
-                Result(
-                    [0, 1, 2]
-                )
+                [0, 1, 2]
             ),
 
             (
                 'double overlay',
                 'aaaa',
                 'aaa',
-                Result(
-                    [0, 1]
-                )
+                [0, 1]
             ),
 
             (
                 'single match',
                 'aaaba',
                 'aaa',
-                Result(
-                    [0]
-                )
+                [0]
             ),
 
             (
                 'empty in empty',
                 '',
                 '',
-                Result(
-                    [0]
-                )
+                [0]
             ),
 
             (
                 'not found on last pos',
                 'abcabcab',
                 'abc',
-                Result(
-                    [0, 3]
-                )
+                [0, 3]
             ),
 
             (
                 'template with separators',
                 'ab ab ab',
                 'ab',
-                Result(
-                    [0, 3, 6]
-                )
+                [0, 3, 6]
             ),
 
             (
                 'reverse repeated template',
                 'ababababababababab',
                 'bb',
-                Result(
-                    []
-                )
+                []
             ),
 
             (
                 'match',
                 'abbaabbaabbbabaabaabbabbaabbbaabbabbbbbbaaaabbaaabbaaaaaabb',
                 'aabba',
-                Result(
-                    [3, 17, 29, 42, 47]
-                )
+                [3, 17, 29, 42, 47]
             ),
 
             (
                 'no matches',
                 'baabbbbbbababababaaaaabbaababbbabaaaabbbbaabbaaaaaabbabbaabbbbaab',
                 'aaabab',
-                Result(
-                    []
-                )
-            ),
+                []
+            )
+            ,
 
             (
                 'chaotic',
                 'abaababbbabababbbbabababbbabbabbabaabaababbaaaabbbbababaabb',
                 'bbaba',
-                Result(
-                    [7, 16, 30, 49]
-                )
+                [7, 16, 30, 49]
             )
         ]
 
@@ -407,7 +467,7 @@ class Tester(unittest.TestCase):
             with self.subTest(f'{method.__name__} DONE'):
                 for testname, text, substr, expected in tests_strings:
                     self.run_and_display(method, text, substr,
-                                         testname, expected)
+                                         testname, Result(expected))
 
                 for testname, file_test, file_ans in tests_files:
                     with open(file_test) as test:

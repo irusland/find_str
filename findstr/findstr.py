@@ -44,7 +44,7 @@ class Finder:
 
     class Hash:
         @staticmethod
-        def search(text, sample, get_hash, hash_shift):
+        def search(text, sample, get_hash, hash_shift, name):
             time_start = timer.time()
             found_indexes = []
             sample_hash_sum = get_hash(sample, len(sample))
@@ -69,8 +69,7 @@ class Finder:
 
             time_stop = timer.time()
             time = time_stop - time_start
-            return Result(found_indexes, collisions, time,
-                          Finder.Hash.Linear.__name__)
+            return Result(found_indexes, collisions, time, name)
 
         class Linear:
             @staticmethod
@@ -78,7 +77,7 @@ class Finder:
                 return Finder.Hash.search(
                     text, sample,
                     Finder.Hash.Linear.get_hash,
-                    Finder.Hash.Linear.hash_shift)
+                    Finder.Hash.Linear.hash_shift, 'Linear')
 
             @staticmethod
             def hash_shift(i, sample_length, current_hash, text):
@@ -101,7 +100,7 @@ class Finder:
                 return Finder.Hash.search(
                     text, sample,
                     Finder.Hash.Quad.get_hash,
-                    Finder.Hash.Quad.hash_shift)
+                    Finder.Hash.Quad.hash_shift, 'Quad')
 
             @staticmethod
             def hash_shift(i, sample_length, current_hash, text):
@@ -124,7 +123,7 @@ class Finder:
                 return Finder.Hash.search(
                     text, sample,
                     Finder.Hash.RabinKarph.get_hash,
-                    Finder.Hash.RabinKarph.hash_shift)
+                    Finder.Hash.RabinKarph.hash_shift, 'Rabin Karph')
 
             @staticmethod
             def hash_shift(i, length, current_hash, text):
@@ -145,7 +144,44 @@ class Finder:
     class Automate:
         @staticmethod
         def search(text, sample):
-            pass
+            title = 'Automate'
+            time_start = timer.time()
+
+            found_indexes = []
+            collisions = 0
+            length = len(sample)
+            alphabet = {}
+
+            for i in range(0, length):
+                alphabet[sample[i]] = 0
+
+            table = {}
+            for j in range(0, length + 1):
+                table[j] = {}
+
+            for i in alphabet:
+                table[0][i] = 0
+
+            for j in range(0, length):
+                prev = table[j][sample[j]]
+                table[j][sample[j]] = j + 1
+                for i in alphabet:
+                    table[j + 1][i] = table[prev][i]
+
+            current_state = 0
+            sample_length = len(sample)
+            for i in range(0, len(text)):
+                if text[i] not in table[current_state].keys():
+                    collisions += 1
+                    current_state = 0
+                    continue
+                current_state = table[current_state][text[i]]
+                if current_state == sample_length:
+                    found_indexes.append(i - sample_length + 1)
+
+            time_stop = timer.time()
+            time = time_stop - time_start
+            return Result(found_indexes, collisions, time, title)
 
     class BoyereMoore:
         @staticmethod
@@ -154,7 +190,16 @@ class Finder:
 
 
 def main():
-    pass
+    methods = [Finder.BruteForce,
+               Finder.Hash.Linear,
+               Finder.Hash.Quad,
+               Finder.Hash.RabinKarph,
+               Finder.Automate,
+               Finder.BoyereMoore]
+    for method in methods:
+        result = method.search('ÆÆÆ', 'Æ')
+        result.log()
+
 
 
 if __name__ == '__main__':

@@ -1,5 +1,5 @@
 import unittest
-import finderer as Finder
+import finder as Finder
 
 
 class Result:

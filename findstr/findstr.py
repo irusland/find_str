@@ -400,13 +400,6 @@ class Tester(unittest.TestCase):
             ),
 
             (
-                'empty in empty',
-                '',
-                '',
-                [0]
-            ),
-
-            (
                 'not found on last pos',
                 'abcabcab',
                 'abc',
@@ -475,3 +468,6 @@ class Tester(unittest.TestCase):
                             expected = Result(indexes)
                             self.run_and_display(method, text, sub_string,
                                                  test_name, expected)
+
+
+# ВЫЧИСТИТЬ АРХИВ

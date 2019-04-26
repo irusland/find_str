@@ -1,5 +1,5 @@
 import unittest
-import finder as Finder
+import algorithms as Finder
 
 
 class Result:

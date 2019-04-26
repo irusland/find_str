@@ -1,4 +1,5 @@
 import time as timer
+import result
 
 
 class BruteForce:

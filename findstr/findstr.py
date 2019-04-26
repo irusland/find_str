@@ -1,5 +1,5 @@
 import unittest
-import time as timer
+import finder
 
 
 def main():

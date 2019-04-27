@@ -1,5 +1,6 @@
 import time as timer
 from result import *
+import unittest
 
 
 class BruteForce:
@@ -154,7 +155,7 @@ class Automate:
         current_state = 0
         sample_length = len(sample)
         for i in range(len(text)):
-            if text[i] not in table[current_state].keys():
+            if text[i] not in table[current_state]:
                 collisions += 1
                 current_state = 0
                 continue
@@ -254,7 +255,6 @@ class BoyereMoore:
 
         time_stop = timer.time()
         time = time_stop - time_start
-
         return Result(indexes, collisions, time, 'Boyer moore')
 
 
@@ -294,3 +294,36 @@ class KMP:
         time_stop = timer.time()
         time = time_stop - time_start
         return Result(indexes, collisions, time, "KMP")
+
+
+class SuffixArray:
+    @staticmethod
+    def build_suffix_array(text):
+        suffixes = []
+        for i in range(len(text)):
+            suffix = text[-(i + 1):]
+            suffixes.append((suffix, len(text) - i))
+        suffixes.sort(key=lambda tup: tup[0])
+        return suffixes
+
+    @staticmethod
+    def search(text, pattern):
+        pass
+
+    class Tester(unittest.TestCase):
+        def test_suffix_array_banana(self):
+            arr = SuffixArray.build_suffix_array('banana')
+            self.assertListEqual([('a', 6),
+                                  ('ana', 4),
+                                  ('anana', 2),
+                                  ('banana', 1),
+                                  ('na', 5),
+                                  ('nana', 3)], arr)
+
+        def test_suffix_array_abaab(self):
+            arr = SuffixArray.build_suffix_array('abaab')
+            self.assertListEqual([('aab', 3),
+                                  ('ab', 4),
+                                  ('abaab', 1),
+                                  ('b', 5),
+                                  ('baab', 2)], arr)

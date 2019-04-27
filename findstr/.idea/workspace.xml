@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f3bba32f-3c76-4fd7-a224-5ff60cd82aa2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/findstr.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/findstr.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/finder.py" beforeDir="false" afterPath="$PROJECT_DIR$/finder.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/findstr.py" beforeDir="false" afterPath="$PROJECT_DIR$/findstr.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/result.py" beforeDir="false" afterPath="$PROJECT_DIR$/result.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,8 +19,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/findstr.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="7" column="11" lean-forward="true" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
+            <state relative-caret-position="800">
+              <caret line="40" column="72" selection-start-line="40" selection-start-column="72" selection-end-line="40" selection-end-column="72" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -35,8 +31,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/finder.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="520">
-              <caret line="26" selection-start-line="26" selection-end-line="26" />
+            <state relative-caret-position="126">
+              <caret line="149" column="38" lean-forward="true" selection-start-line="149" selection-start-column="38" selection-end-line="149" selection-end-column="38" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
@@ -66,6 +62,7 @@
     <findStrings>
       <find>bcccaabca</find>
       <find>PLGGiEwPuFPrqlfnyYCqFrsKJRcJoCTEEvaGyWgXgCzSKDoHvmZGcOLPeyQLIwnzzfjGR</find>
+      <find>keys</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -76,13 +73,13 @@
       <list>
         <option value="$PROJECT_DIR$/findstr" />
         <option value="$PROJECT_DIR$/js" />
-        <option value="$PROJECT_DIR$/finder.py" />
-        <option value="$PROJECT_DIR$/findstr.py" />
         <option value="$PROJECT_DIR$/result.py" />
+        <option value="$PROJECT_DIR$/findstr.py" />
+        <option value="$PROJECT_DIR$/finder.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="width" value="2560" />
     <option name="height" value="1440" />
   </component>
@@ -123,16 +120,16 @@
     </option>
   </component>
   <component name="RunManager" selected="Python tests.Unittests in findstr.py">
-    <configuration name="findstr" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="findstr main" type="PythonConfigurationType" factoryName="Python">
       <module name="findstr" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="/usr/local/bin/python3.6" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/findstr.py" />
@@ -142,6 +139,81 @@
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
       <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests for finder.SuffixArray" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="findstr" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_pattern" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;finder.SuffixArray&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests for finder.SuffixArray.Tester" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="findstr" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_pattern" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;finder.SuffixArray.Tester&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests for finder.Tester" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="findstr" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_pattern" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;finder.Tester&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests for finder.TesterAll" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="findstr" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_pattern" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;finder.TesterAll&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests for finder.Tester.test_builder" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="findstr" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_pattern" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;finder.Tester.test_builder&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <configuration name="Unittests in findstr.py" type="tests" factoryName="Unittests" nameIsGenerated="true">
@@ -175,12 +247,21 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.findstr" />
+      <item itemvalue="Python.findstr main" />
       <item itemvalue="Python tests.Unittests in findstr.py" />
+      <item itemvalue="Python tests.Unittests for finder.SuffixArray.Tester" />
+      <item itemvalue="Python tests.Unittests for finder.Tester.test_builder" />
+      <item itemvalue="Python tests.Unittests for finder.TesterAll" />
+      <item itemvalue="Python tests.Unittests for finder.SuffixArray" />
+      <item itemvalue="Python tests.Unittests for finder.Tester" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.findstr" />
+        <item itemvalue="Python tests.Unittests for finder.Tester" />
+        <item itemvalue="Python tests.Unittests for finder.SuffixArray" />
+        <item itemvalue="Python tests.Unittests for finder.SuffixArray.Tester" />
+        <item itemvalue="Python tests.Unittests for finder.TesterAll" />
+        <item itemvalue="Python tests.Unittests for finder.Tester.test_builder" />
       </list>
     </recent_temporary>
   </component>
@@ -206,55 +287,54 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_in_findstr_py - 2019.04.22 at 17h 05m 46s.xml">
+    <history-entry file="Unittests_for_finder_Tester - 2019.04.27 at 11h 19m 17s.xml">
+      <configuration name="Unittests for finder.Tester" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_finder_Tester - 2019.04.27 at 11h 19m 36s.xml">
+      <configuration name="Unittests for finder.Tester" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_finder_Tester - 2019.04.27 at 11h 20m 58s.xml">
+      <configuration name="Unittests for finder.Tester" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_findstr_py - 2019.04.27 at 13h 02m 54s.xml">
       <configuration name="Unittests in findstr.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_findstr_py - 2019.04.22 at 17h 06m 13s.xml">
+    <history-entry file="Unittests_in_findstr_py - 2019.04.27 at 13h 03m 04s.xml">
       <configuration name="Unittests in findstr.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_findstr_py - 2019.04.22 at 17h 16m 44s.xml">
+    <history-entry file="Unittests_in_findstr_py - 2019.04.27 at 13h 03m 25s.xml">
       <configuration name="Unittests in findstr.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_findstr_py - 2019.04.22 at 17h 22m 36s.xml">
+    <history-entry file="Unittests_in_findstr_py - 2019.04.27 at 13h 06m 25s.xml">
       <configuration name="Unittests in findstr.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_findstr_py - 2019.04.22 at 17h 29m 40s.xml">
+    <history-entry file="Unittests_in_findstr_py - 2019.04.27 at 13h 07m 18s.xml">
       <configuration name="Unittests in findstr.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_findstr_py - 2019.04.22 at 17h 30m 31s.xml">
+    <history-entry file="Unittests_in_findstr_py - 2019.04.27 at 13h 07m 22s.xml">
       <configuration name="Unittests in findstr.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_findstr_py - 2019.04.22 at 17h 31m 14s.xml">
-      <configuration name="Unittests in findstr.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_findstr_py - 2019.04.27 at 08h 58m 09s.xml">
-      <configuration name="Unittests in findstr.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_findstr_py - 2019.04.27 at 09h 00m 13s.xml">
-      <configuration name="Unittests in findstr.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_findstr_py - 2019.04.27 at 09h 09m 54s.xml">
+    <history-entry file="Unittests_in_findstr_py - 2019.04.27 at 13h 07m 26s.xml">
       <configuration name="Unittests in findstr.py" configurationId="tests" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="2560" height="1440" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.113088176" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24990115" />
       <window_info id="Favorites" order="2" side_tool="true" weight="0.32977462" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32977098" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.26946566" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.265015" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3993994" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Python Console" order="10" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.3295796" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -285,16 +365,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js" />
-    <entry file="file://$PROJECT_DIR$/finder.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/result.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -302,10 +372,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="218" selection-start-line="218" selection-end-line="218" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="93" selection-start-line="93" selection-end-line="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="664">
+          <caret line="80" selection-start-line="80" selection-end-line="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/contextlib.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="98" selection-start-line="98" selection-end-line="98" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finder.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="149" column="38" lean-forward="true" selection-start-line="149" selection-start-column="38" selection-end-line="149" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/findstr.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="7" column="11" lean-forward="true" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
+        <state relative-caret-position="800">
+          <caret line="40" column="72" selection-start-line="40" selection-start-column="72" selection-end-line="40" selection-end-column="72" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>

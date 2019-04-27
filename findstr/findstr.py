@@ -47,9 +47,9 @@ class Tester(unittest.TestCase):
     def parse(test):
         data = test.readlines()
         answer = data[-1]
-        text = data[0:len(data) - 1]
-        text_str = ''.join(str(line) for line in text)
-        text_str = text_str[0:len(text_str) - 1]
+        text = data[:-1]
+        text_str = ''.join(map(str, text))[:-1]
+        text_str = text_str[:-1]
         return text_str, answer
 
     def test_all(self):
@@ -195,7 +195,7 @@ class Tester(unittest.TestCase):
                         with open(file_ans) as answer:
                             indexes = []
                             for line in answer:
-                                number = line[0:len(line) - 1]
+                                number = line[:-1]
                                 if len(number) > 0:
                                     indexes.append(int(number))
                             expected = Result(indexes)

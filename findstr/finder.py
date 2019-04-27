@@ -1,5 +1,5 @@
 import time as timer
-import result
+from result import *
 
 
 class BruteForce:
@@ -23,6 +23,7 @@ class BruteForce:
         time = time_stop - time_start
         return Result(found_indexes, collisions, time,
                       BruteForce.__name__)
+
 
 class Hash:
     @staticmethod
@@ -127,7 +128,6 @@ class Hash:
 class Automate:
     @staticmethod
     def search(text, sample):
-        title = 'Automate'
         time_start = timer.time()
 
         found_indexes = []
@@ -164,7 +164,7 @@ class Automate:
 
         time_stop = timer.time()
         time = time_stop - time_start
-        return Result(found_indexes, collisions, time, title)
+        return Result(found_indexes, collisions, time, 'Automate')
 
 
 class BoyereMoore:
@@ -213,7 +213,6 @@ class BoyereMoore:
 
     @staticmethod
     def search(text, pattern):
-        title = 'Boyer moore'
         time_start = timer.time()
 
         bc_table = BoyereMoore.get_table_of_last_char_appearance(pattern)
@@ -256,7 +255,7 @@ class BoyereMoore:
         time_stop = timer.time()
         time = time_stop - time_start
 
-        return Result(indexes, collisions, time, title)
+        return Result(indexes, collisions, time, 'Boyer moore')
 
 
 class KMP:

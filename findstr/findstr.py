@@ -1,5 +1,8 @@
+#!/usr/bin/python3.6
+
 import unittest
-import finder
+from finder import *
+from result import *
 
 
 def main():
@@ -198,6 +201,3 @@ class Tester(unittest.TestCase):
                             expected = Result(indexes)
                             self.run_and_display(method, text, sub_string,
                                                  test_name, expected)
-
-
-# ВЫЧИСТИТЬ АРХИВ

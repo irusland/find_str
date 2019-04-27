@@ -8,15 +8,15 @@ from result import *
 def main():
     methods = [
         BruteForce,
-        Hash.Linear,
-        Hash.Quad,
-        Hash.RabinKarph,
+        # Hash.Linear,
+        # Hash.Quad,
+        # Hash.RabinKarph,
         Automate,
-        BoyereMoore,
+        BoyerMoore,
         KMP
     ]
     for method in methods:
-        result = method.search('aaaa', 'aa')
+        result = method('aa').search('aaaa')
         result.log()
 
 
@@ -67,7 +67,7 @@ class Tester(unittest.TestCase):
             BruteForce,
             Hash,
             Automate,
-            BoyereMoore,
+            BoyerMoore,
             KMP
         ]
         hash_methods = [

@@ -1,6 +1,8 @@
+import collections
 import time as timer
 from result import *
 import unittest
+from test_source import *
 
 
 class BruteForce:
@@ -25,6 +27,9 @@ class BruteForce:
         time_stop = timer.time()
         time = time_stop - time_start
         return Result(found_indexes, collisions, time, BruteForce.__name__)
+
+    class Tester(unittest.TestCase):
+        def test_simple(self):
 
 
 class Hash:
@@ -58,7 +63,8 @@ class Hash:
 
         time_stop = timer.time()
         time = time_stop - time_start
-        return Result(found_indexes, collisions, time, self.hash_method.__name__)
+        return Result(
+            found_indexes, collisions, time, self.hash_method.__name__)
 
     class Linear:
         @staticmethod
@@ -117,15 +123,11 @@ class Automate:
 
     def get_table(self):
         length = len(self.pattern)
-        alphabet = {}
+        alphabet = []
+        table = collections.defaultdict(collections.defaultdict)
 
         for i in range(length):
-            alphabet[self.pattern[i]] = 0
-
-        table = {}
-        for j in range(length + 1):
-            table[j] = {}
-
+            alphabet.append(self.pattern[i])
         for i in alphabet:
             table[0][i] = 0
 
@@ -141,7 +143,6 @@ class Automate:
 
         found_indexes = []
         collisions = 0
-
         current_state = 0
         sample_length = len(self.pattern)
         for i in range(len(text)):
@@ -158,27 +159,24 @@ class Automate:
         return Result(found_indexes, collisions, time, 'Automate')
 
 
-class BoyereMoore:
+class BoyerMoore:
     def __init__(self, pattern):
         self.pattern = pattern
+        self.tx = ('*' * len(self.pattern)) + self.pattern
         self.bc_table = self.get_table_of_last_char_appearance()
         self.rpr = self.get_rpr_table()
         self.gs_table = self.get_shift_table()
 
     def get_table_of_last_char_appearance(self):
-        table = {}
-        m = len(self.pattern)
-        for i in range(m - 1):
-            table[self.pattern[i]] = m - 1 - i
-        return table
+        m = len(self.pattern) - 1
+        return {c: (m - i) for (i, c) in enumerate(self.pattern)}
 
-    @staticmethod
-    def is_equal(str1, a, b, str2, m):
-        for k in range(a, b + 1):
-            if str1[k] == '*':
+    def is_equal(self, a, b, m):
+        for k in range(a, b):
+            if self.tx[k] == '*':
                 m += 1
                 continue
-            if str1[k] != str2[m]:
+            if self.tx[k] != self.pattern[m]:
                 return False
             else:
                 m += 1
@@ -187,14 +185,12 @@ class BoyereMoore:
     def get_rpr_table(self):
         m = len(self.pattern)
         rpr = {}
-        tx = ('*' * len(self.pattern)) + self.pattern
         for p in range(m + 1):
             for k in range(m - p + 1, -m, -1):
-                is_bs = BoyereMoore.is_equal(
-                    tx, k + m - 1, k + m + p - 2, self.pattern, m - p)
-                if (is_bs and ((k - 2 >= 0 and
-                                self.pattern[k - 2] != self.pattern[m - p - 1])
-                               or k - 2 < 0) and (p != m or k != 1)):
+                is_bad_suffix = self.is_equal(k + m - 1, k + m + p - 1, m - p)
+                if (is_bad_suffix and ((k - 2 >= 0 and self.pattern[k - 2]
+                                       != self.pattern[m - p - 1])
+                                       or k - 2 < 0) and (p != m or k != 1)):
                     rpr[p] = k
                     break
         return rpr
@@ -317,3 +313,5 @@ class SuffixArray:
                                   ('abaab', 1),
                                   ('b', 5),
                                   ('baab', 2)], arr)
+
+

@@ -33,13 +33,23 @@ class Tester(unittest.TestCase):
                              actual.found_indexes,
                              msg)
 
-    def get_search_result_in_text(self, method, text, substring):
+    def get_search_result_in_text(self, method, text, pattern,
+                                  hash_method=None):
         self.assertTrue(hasattr(method, 'search'))
-        return method.search(text, substring)
+        if hash_method is not None:
+            return method(pattern, hash_method).search(text)
+        return method(pattern).search(text)
 
-    def run_and_display(self, method, text, sub_string, test_name, expected):
-        with self.subTest(f'{method.__name__} on test \"{test_name}\"'):
-            actual = self.get_search_result_in_text(method, text, sub_string)
+    def run_and_display(self, method, text, sub_string, test_name, expected,
+                        hash_method=None):
+        with self.subTest(f'{method.__name__}.{hash_method} '
+                          f'on test \"{test_name}\"'):
+            if hash_method is not None:
+                actual = self.get_search_result_in_text(
+                    method, text, sub_string, hash_method)
+            else:
+                actual = self.get_search_result_in_text(
+                    method, text, sub_string)
             msg = f'\nTEXT: {text} :TEXT\nSUB: {sub_string} :SUB'
             self.assert_result(expected, actual, msg)
 
@@ -55,12 +65,15 @@ class Tester(unittest.TestCase):
     def test_all(self):
         methods = [
             BruteForce,
-            Hash.Linear,
-            Hash.Quad,
-            Hash.RabinKarph,
+            Hash,
             Automate,
             BoyereMoore,
             KMP
+        ]
+        hash_methods = [
+            Hash.Linear,
+            Hash.Quad,
+            Hash.RabinKarph
         ]
         tests_strings = [
             (
@@ -186,8 +199,14 @@ class Tester(unittest.TestCase):
         for method in methods:
             with self.subTest(f'{method.__name__} DONE'):
                 for test_name, text, sub_string, expected in tests_strings:
-                    self.run_and_display(method, text, sub_string,
-                                         test_name, Result(expected))
+                    if method.__name__ == 'Hash':
+                        for hash_method in hash_methods:
+                            self.run_and_display(method, text, sub_string,
+                                                 test_name, Result(expected),
+                                                 hash_method)
+                    else:
+                        self.run_and_display(method, text, sub_string,
+                                             test_name, Result(expected))
 
                 for test_name, file_test, file_ans in tests_files:
                     with open(file_test) as test:
@@ -199,5 +218,13 @@ class Tester(unittest.TestCase):
                                 if len(number) > 0:
                                     indexes.append(int(number))
                             expected = Result(indexes)
-                            self.run_and_display(method, text, sub_string,
-                                                 test_name, expected)
+                            if method.__name__ == 'Hash':
+                                for hash_method in hash_methods:
+                                    self.run_and_display(method, text,
+                                                         sub_string,
+                                                         test_name,
+                                                         expected,
+                                                         hash_method)
+                            else:
+                                self.run_and_display(method, text, sub_string,
+                                                     test_name, expected)

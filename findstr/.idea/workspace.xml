@@ -19,11 +19,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/findstr.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="800">
-              <caret line="40" column="72" selection-start-line="40" selection-start-column="72" selection-end-line="40" selection-end-column="72" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="817">
+              <caret line="225" column="65" lean-forward="true" selection-start-line="225" selection-start-column="65" selection-end-line="225" selection-end-column="65" />
             </state>
           </provider>
         </entry>
@@ -31,8 +28,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/finder.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="149" column="38" lean-forward="true" selection-start-line="149" selection-start-column="38" selection-end-line="149" selection-end-column="38" />
+            <state relative-caret-position="915">
+              <caret line="319" selection-start-line="319" selection-end-line="319" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
@@ -74,8 +71,8 @@
         <option value="$PROJECT_DIR$/findstr" />
         <option value="$PROJECT_DIR$/js" />
         <option value="$PROJECT_DIR$/result.py" />
-        <option value="$PROJECT_DIR$/findstr.py" />
         <option value="$PROJECT_DIR$/finder.py" />
+        <option value="$PROJECT_DIR$/findstr.py" />
       </list>
     </option>
   </component>
@@ -89,6 +86,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -100,7 +98,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -287,34 +284,34 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_for_finder_Tester - 2019.04.27 at 11h 19m 17s.xml">
-      <configuration name="Unittests for finder.Tester" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_finder_Tester - 2019.04.27 at 11h 19m 36s.xml">
-      <configuration name="Unittests for finder.Tester" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_finder_Tester - 2019.04.27 at 11h 20m 58s.xml">
-      <configuration name="Unittests for finder.Tester" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_findstr_py - 2019.04.27 at 13h 02m 54s.xml">
+    <history-entry file="Unittests_in_findstr_py - 2019.04.27 at 20h 30m 01s.xml">
       <configuration name="Unittests in findstr.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_findstr_py - 2019.04.27 at 13h 03m 04s.xml">
+    <history-entry file="Unittests_in_findstr_py - 2019.04.27 at 20h 30m 32s.xml">
       <configuration name="Unittests in findstr.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_findstr_py - 2019.04.27 at 13h 03m 25s.xml">
+    <history-entry file="Unittests_in_findstr_py - 2019.04.27 at 20h 30m 55s.xml">
       <configuration name="Unittests in findstr.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_findstr_py - 2019.04.27 at 13h 06m 25s.xml">
+    <history-entry file="Unittests_in_findstr_py - 2019.04.27 at 20h 40m 05s.xml">
       <configuration name="Unittests in findstr.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_findstr_py - 2019.04.27 at 13h 07m 18s.xml">
+    <history-entry file="Unittests_in_findstr_py - 2019.04.27 at 20h 45m 12s.xml">
       <configuration name="Unittests in findstr.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_findstr_py - 2019.04.27 at 13h 07m 22s.xml">
+    <history-entry file="Unittests_in_findstr_py - 2019.04.27 at 20h 45m 28s.xml">
       <configuration name="Unittests in findstr.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_findstr_py - 2019.04.27 at 13h 07m 26s.xml">
+    <history-entry file="Unittests_in_findstr_py - 2019.04.27 at 20h 45m 39s.xml">
+      <configuration name="Unittests in findstr.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_findstr_py - 2019.04.27 at 20h 48m 26s.xml">
+      <configuration name="Unittests in findstr.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_findstr_py - 2019.04.27 at 20h 49m 23s.xml">
+      <configuration name="Unittests in findstr.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_findstr_py - 2019.04.27 at 20h 52m 07s.xml">
       <configuration name="Unittests in findstr.py" configurationId="tests" />
     </history-entry>
   </component>
@@ -326,7 +323,7 @@
       <window_info id="Favorites" order="2" side_tool="true" weight="0.32977462" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32977098" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.265015" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.265015" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3993994" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -365,13 +362,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js" />
-    <entry file="file://$PROJECT_DIR$/result.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="244">
@@ -400,10 +390,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/result.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/finder.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="149" column="38" lean-forward="true" selection-start-line="149" selection-start-column="38" selection-end-line="149" selection-end-column="38" />
+        <state relative-caret-position="915">
+          <caret line="319" selection-start-line="319" selection-end-line="319" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>
@@ -412,11 +409,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/findstr.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="800">
-          <caret line="40" column="72" selection-start-line="40" selection-start-column="72" selection-end-line="40" selection-end-column="72" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="817">
+          <caret line="225" column="65" lean-forward="true" selection-start-line="225" selection-start-column="65" selection-end-line="225" selection-end-column="65" />
         </state>
       </provider>
     </entry>

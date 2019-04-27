@@ -2,7 +2,7 @@ import collections
 import time as timer
 from result import *
 import unittest
-from test_source import *
+from tests_source import *
 
 
 class BruteForce:
@@ -28,8 +28,14 @@ class BruteForce:
         time = time_stop - time_start
         return Result(found_indexes, collisions, time, BruteForce.__name__)
 
-    class Tester(unittest.TestCase):
-        def test_simple(self):
+
+class BruteForceTester(unittest.TestCase):
+    def test(self):
+        for test_name, text, pattern, expected in get_tests():
+            with self.subTest(f'{test_name}'):
+                actual = BruteForce(pattern).search(text).found_indexes
+                msg = f'\nTEXT: {text} :TEXT\nSUB: {pattern} :SUB'
+                self.assertListEqual(expected, actual, msg)
 
 
 class Hash:
@@ -116,6 +122,57 @@ class Hash:
             return hash_sum
 
 
+class HashTester(unittest.TestCase):
+    def test_search(self):
+        hash_methods = [
+            Hash.Linear,
+            Hash.Quad,
+            Hash.RabinKarph
+        ]
+        for test_name, text, pattern, expected in get_tests():
+            for hash_method in hash_methods:
+                with self.subTest(f'{hash_method.__name__} {test_name}'):
+                    actual = Hash(pattern, hash_method).search(text)
+                    msg = f'\nTEXT: {text} :TEXT\nSUB: {pattern} :SUB'
+                    self.assertListEqual(expected, actual.found_indexes, msg)
+
+    def test_linear_hash(self):
+        hash_source = [
+            ('', 0),
+            ('a', 97),
+            ('aaa', 291),
+            ('abc', 294)
+        ]
+        for pattern, result in hash_source:
+            with self.subTest(f'{pattern}'):
+                actual = Hash.Linear.get_hash(pattern, len(pattern))
+                self.assertEqual(result, actual)
+
+    def test_quad_hash(self):
+        hash_source = [
+            ('', 0),
+            ('a', 9409),
+            ('aaa', 28227),
+            ('abc', 28814)
+        ]
+        for pattern, result in hash_source:
+            with self.subTest(f'{pattern}'):
+                actual = Hash.Quad.get_hash(pattern, len(pattern))
+                self.assertEqual(result, actual)
+
+    def test_rk_hash(self):
+        hash_source = [
+            ('', 0),
+            ('a', 97),
+            ('aaa', 679),
+            ('abc', 683)
+        ]
+        for pattern, result in hash_source:
+            with self.subTest(f'{pattern}'):
+                actual = Hash.RabinKarph.get_hash(pattern, len(pattern))
+                self.assertEqual(result, actual)
+
+
 class Automate:
     def __init__(self, pattern):
         self.pattern = pattern
@@ -157,6 +214,30 @@ class Automate:
         time_stop = timer.time()
         time = time_stop - time_start
         return Result(found_indexes, collisions, time, 'Automate')
+
+
+class AutomateTester(unittest.TestCase):
+    def test_search(self):
+        for test_name, text, pattern, expected in get_tests():
+            with self.subTest(f'{test_name}'):
+                actual = Automate(pattern).search(text)
+                msg = f'\nTEXT: {text} :TEXT\nSUB: {pattern} :SUB'
+                self.assertListEqual(expected, actual.found_indexes, msg)
+
+    def test_table(self):
+        table_source = [
+            ('', {}),
+            ('a', {0: {'a': 1}, 1: {'a': 1}}),
+            ('aaa', {0: {'a': 1}, 1: {'a': 2}, 2: {'a': 3}, 3: {'a': 3}}),
+            ('abc', {0: {'a': 1, 'b': 0, 'c': 0},
+                     1: {'a': 1, 'b': 2, 'c': 0},
+                     2: {'a': 1, 'b': 0, 'c': 3},
+                     3: {'a': 1, 'b': 0, 'c': 0}})
+        ]
+        for pattern, result in table_source:
+            with self.subTest(f'{pattern}'):
+                actual = Automate(pattern).get_table()
+                self.assertDictEqual(result, actual)
 
 
 class BoyerMoore:
@@ -243,6 +324,48 @@ class BoyerMoore:
         return Result(indexes, collisions, time, 'Boyer moore')
 
 
+class BoyerMooreTester(unittest.TestCase):
+    def test_search(self):
+        for test_name, text, pattern, expected in get_tests():
+            with self.subTest(f'{test_name}'):
+                actual = BoyerMoore(pattern).search(text)
+                msg = f'\nTEXT: {text} :TEXT\nSUB: {pattern} :SUB'
+                self.assertListEqual(expected, actual.found_indexes, msg)
+
+    def test_bc_table(self):
+        table_source = [
+            ('a', {'a': 0}),
+            ('aaa', {'a': 0}),
+            ('abc', {'a': 2, 'b': 1, 'c': 0})
+        ]
+        for pattern, result in table_source:
+            with self.subTest(f'{pattern}'):
+                actual = BoyerMoore(pattern).bc_table
+                self.assertDictEqual(result, actual)
+
+    def test_gs_table(self):
+        table_source = [
+            ('a', {0: 1, 1: 1}),
+            ('aaa', {0: 3, 1: 2, 2: 1, 3: 1}),
+            ('abc', {0: 1, 1: 3, 2: 3, 3: 3})
+        ]
+        for pattern, result in table_source:
+            with self.subTest(f'{pattern}'):
+                actual = BoyerMoore(pattern).gs_table
+                self.assertDictEqual(result, actual)
+
+    def test_rpr_table(self):
+        table_source = [
+            ('a', {0: 1, 1: 0}),
+            ('aaa', {0: 1, 1: 1, 2: 1, 3: 0}),
+            ('abc', {0: 3, 1: 0, 2: -1, 3: -2})
+        ]
+        for pattern, result in table_source:
+            with self.subTest(f'{pattern}'):
+                actual = BoyerMoore(pattern).rpr
+                self.assertDictEqual(result, actual)
+
+
 class KMP:
     def __init__(self, pattern):
         self.pattern = pattern
@@ -280,6 +403,26 @@ class KMP:
         time_stop = timer.time()
         time = time_stop - time_start
         return Result(indexes, collisions, time, "KMP")
+
+
+class KMPTester(unittest.TestCase):
+    def test_search(self):
+        for test_name, text, pattern, expected in get_tests():
+            with self.subTest(f'{test_name}'):
+                actual = KMP(pattern).search(text)
+                msg = f'\nTEXT: {text} :TEXT\nSUB: {pattern} :SUB'
+                self.assertListEqual(expected, actual.found_indexes, msg)
+
+    def test_table(self):
+        table_source = [
+            ('a', [0]),
+            ('aaa', [0, 1, 2]),
+            ('abc', [0, 0, 0])
+        ]
+        for pattern, result in table_source:
+            with self.subTest(f'{pattern}'):
+                actual = KMP(pattern).partial
+                self.assertListEqual(result, actual)
 
 
 class SuffixArray:

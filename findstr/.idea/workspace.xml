@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f3bba32f-3c76-4fd7-a224-5ff60cd82aa2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/pattern.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/text.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/memograph.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/textgen.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chronograph.py" beforeDir="false" afterPath="$PROJECT_DIR$/chronograph.py" afterDir="false" />
     </list>
@@ -21,13 +21,23 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/chronograph.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="7" column="34" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
+            <state relative-caret-position="835">
+              <caret line="110" lean-forward="true" selection-start-line="110" selection-end-line="110" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/memograph.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/textgen.py">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -59,6 +69,8 @@
         <option value="$PROJECT_DIR$/tests_source.py" />
         <option value="$PROJECT_DIR$/finder.py" />
         <option value="$PROJECT_DIR$/pattern.txt" />
+        <option value="$PROJECT_DIR$/memograph.py" />
+        <option value="$PROJECT_DIR$/textgen.py" />
         <option value="$PROJECT_DIR$/chronograph.py" />
       </list>
     </option>
@@ -108,7 +120,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests for chronograph.ChronoTester.test_measure_accurate">
+  <component name="RunManager" selected="Python tests.Unittests for chronograph.ChronoTester.test_measure_text_parts">
     <configuration name="findstr main" type="PythonConfigurationType" factoryName="Python">
       <module name="findstr" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -160,7 +172,7 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for finder.AutomateTester" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for chronograph.ChronoTester.test_measure_text_parts" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="findstr" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -171,7 +183,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_pattern" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;finder.AutomateTester&quot;" />
+      <option name="_new_target" value="&quot;chronograph.ChronoTester.test_measure_text_parts&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -238,19 +250,19 @@
     <list>
       <item itemvalue="Python.findstr main" />
       <item itemvalue="Python tests.Unittests in findstr.py" />
-      <item itemvalue="Python tests.Unittests for finder.AutomateTester" />
       <item itemvalue="Python tests.Unittests for finder.BoyerMooreTester" />
       <item itemvalue="Python tests.Unittests for finder.KMPTester" />
       <item itemvalue="Python tests.Unittests for chronograph.ChronoTester" />
       <item itemvalue="Python tests.Unittests for chronograph.ChronoTester.test_measure_accurate" />
+      <item itemvalue="Python tests.Unittests for chronograph.ChronoTester.test_measure_text_parts" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Unittests for chronograph.ChronoTester.test_measure_text_parts" />
         <item itemvalue="Python tests.Unittests for chronograph.ChronoTester.test_measure_accurate" />
         <item itemvalue="Python tests.Unittests for chronograph.ChronoTester" />
         <item itemvalue="Python tests.Unittests for finder.KMPTester" />
         <item itemvalue="Python tests.Unittests for finder.BoyerMooreTester" />
-        <item itemvalue="Python tests.Unittests for finder.AutomateTester" />
       </list>
     </recent_temporary>
   </component>
@@ -290,35 +302,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_for_chronograph_ChronoTester_test_measure_accurate - 2019.04.28 at 11h 38m 22s.xml">
-      <configuration name="Unittests for chronograph.ChronoTester.test_measure_accurate" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_chronograph_ChronoTester_test_measure_accurate - 2019.04.28 at 11h 38m 26s.xml">
-      <configuration name="Unittests for chronograph.ChronoTester.test_measure_accurate" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_chronograph_ChronoTester_test_measure_accurate - 2019.04.28 at 11h 38m 33s.xml">
-      <configuration name="Unittests for chronograph.ChronoTester.test_measure_accurate" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_chronograph_ChronoTester_test_measure_accurate - 2019.04.28 at 11h 41m 31s.xml">
-      <configuration name="Unittests for chronograph.ChronoTester.test_measure_accurate" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_chronograph_ChronoTester_test_measure_accurate - 2019.04.28 at 11h 41m 59s.xml">
-      <configuration name="Unittests for chronograph.ChronoTester.test_measure_accurate" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_chronograph_ChronoTester_test_measure_accurate - 2019.04.28 at 11h 43m 06s.xml">
-      <configuration name="Unittests for chronograph.ChronoTester.test_measure_accurate" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_chronograph_ChronoTester_test_measure_accurate - 2019.04.28 at 11h 44m 02s.xml">
-      <configuration name="Unittests for chronograph.ChronoTester.test_measure_accurate" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_chronograph_ChronoTester_test_measure_accurate - 2019.04.28 at 11h 47m 47s.xml">
-      <configuration name="Unittests for chronograph.ChronoTester.test_measure_accurate" configurationId="tests" />
-    </history-entry>
     <history-entry file="Unittests_for_chronograph_ChronoTester_test_measure_accurate - 2019.04.28 at 11h 49m 47s.xml">
       <configuration name="Unittests for chronograph.ChronoTester.test_measure_accurate" configurationId="tests" />
     </history-entry>
     <history-entry file="Unittests_for_chronograph_ChronoTester_test_measure_accurate - 2019.04.28 at 11h 50m 58s.xml">
       <configuration name="Unittests for chronograph.ChronoTester.test_measure_accurate" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_chronograph_ChronoTester_test_measure_text_parts - 2019.04.28 at 12h 43m 13s.xml">
+      <configuration name="Unittests for chronograph.ChronoTester.test_measure_text_parts" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_chronograph_ChronoTester_test_measure_text_parts - 2019.04.28 at 12h 44m 51s.xml">
+      <configuration name="Unittests for chronograph.ChronoTester.test_measure_text_parts" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_chronograph_ChronoTester_test_measure_text_parts - 2019.04.28 at 12h 46m 17s.xml">
+      <configuration name="Unittests for chronograph.ChronoTester.test_measure_text_parts" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_chronograph_ChronoTester_test_measure_text_parts - 2019.04.28 at 12h 46m 21s.xml">
+      <configuration name="Unittests for chronograph.ChronoTester.test_measure_text_parts" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_chronograph_ChronoTester_test_measure_text_parts - 2019.04.28 at 12h 46m 57s.xml">
+      <configuration name="Unittests for chronograph.ChronoTester.test_measure_text_parts" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_chronograph_ChronoTester_test_measure_text_parts - 2019.04.28 at 12h 47m 35s.xml">
+      <configuration name="Unittests for chronograph.ChronoTester.test_measure_text_parts" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_chronograph_ChronoTester_test_measure_text_parts - 2019.04.28 at 12h 48m 18s.xml">
+      <configuration name="Unittests for chronograph.ChronoTester.test_measure_text_parts" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_chronograph_ChronoTester_test_measure_text_parts - 2019.04.28 at 12h 51m 27s.xml">
+      <configuration name="Unittests for chronograph.ChronoTester.test_measure_text_parts" configurationId="tests" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -334,12 +346,12 @@
     <frame x="0" y="0" width="2560" height="1440" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.113088176" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.113088176" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24990115" />
       <window_info id="Favorites" order="2" side_tool="true" weight="0.32977462" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3295796" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.265015" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.265015" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3993994" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -474,10 +486,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/textgen.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/memograph.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/chronograph.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="7" column="34" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
+        <state relative-caret-position="835">
+          <caret line="110" lean-forward="true" selection-start-line="110" selection-end-line="110" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>

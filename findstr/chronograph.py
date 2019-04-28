@@ -37,8 +37,21 @@ class Chronograph:
             return time / cycles
         return time
 
+    def measure_text_parts(self, part_count):
+        text, pattern = self.open_file()
+        part_len = round(len(text) / part_count)
+        length = part_len
+        while length < len(text):
+            text_to_search = text[:length]
+            length += part_len
+            if len(text) - (length - part_len) < part_len:
+                text_to_search = text
+            time = self.measure_accurate(text_to_search, pattern)
+            yield (length, len(pattern), time)
+
     def measure_generator(self, generator):
         pass
+
 
 class ChronoTester(unittest.TestCase):
     def test_open(self):
@@ -82,3 +95,16 @@ class ChronoTester(unittest.TestCase):
             base_time += time
             count += 1
             base_time /= count
+
+    def test_measure_text_parts(self):
+        c = Chronograph(finder.Hash, finder.Hash.Linear)
+        part_times = c.measure_text_parts(3)
+        count = 0
+        current = (0, 0, 0)
+        for part in part_times:
+            self.assertTrue(current[0] < part[0], f'{current[0]} < {part[0]}')
+            self.assertTrue(current[2] < part[2], f'{current[2]} < {part[2]}')
+            count += 1
+            current = part
+        self.assertEqual(count, 3,
+                         f'len(part_times) == {count}\n {part_times}')

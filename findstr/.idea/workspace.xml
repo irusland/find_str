@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f3bba32f-3c76-4fd7-a224-5ff60cd82aa2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/memograph.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/textgen.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chronograph.py" beforeDir="false" afterPath="$PROJECT_DIR$/chronograph.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/textgen.py" beforeDir="false" afterPath="$PROJECT_DIR$/textgen.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,11 +15,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/chronograph.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="835">
-              <caret line="110" lean-forward="true" selection-start-line="110" selection-end-line="110" />
+            <state relative-caret-position="1040">
+              <caret line="52" column="12" lean-forward="true" selection-start-line="52" selection-start-column="12" selection-end-line="52" selection-end-column="12" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
@@ -30,14 +27,21 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/memograph.py">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/textgen.py">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="140">
+              <caret line="7" column="48" lean-forward="true" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="48" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -54,6 +58,7 @@
       <find>bcccaabca</find>
       <find>PLGGiEwPuFPrqlfnyYCqFrsKJRcJoCTEEvaGyWgXgCzSKDoHvmZGcOLPeyQLIwnzzfjGR</find>
       <find>keys</find>
+      <find>she</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -70,8 +75,8 @@
         <option value="$PROJECT_DIR$/finder.py" />
         <option value="$PROJECT_DIR$/pattern.txt" />
         <option value="$PROJECT_DIR$/memograph.py" />
-        <option value="$PROJECT_DIR$/textgen.py" />
         <option value="$PROJECT_DIR$/chronograph.py" />
+        <option value="$PROJECT_DIR$/textgen.py" />
       </list>
     </option>
   </component>
@@ -120,7 +125,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests for chronograph.ChronoTester.test_measure_text_parts">
+  <component name="RunManager" selected="Python tests.Unittests for textgen.Tester.test_generation">
     <configuration name="findstr main" type="PythonConfigurationType" factoryName="Python">
       <module name="findstr" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -187,21 +192,6 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for finder.BoyerMooreTester" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <module name="findstr" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_pattern" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;finder.BoyerMooreTester&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
     <configuration name="Unittests for finder.KMPTester" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="findstr" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -214,6 +204,21 @@
       <option name="_new_pattern" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;finder.KMPTester&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests for textgen.Tester.test_generation" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="findstr" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_pattern" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;textgen.Tester.test_generation&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -250,19 +255,19 @@
     <list>
       <item itemvalue="Python.findstr main" />
       <item itemvalue="Python tests.Unittests in findstr.py" />
-      <item itemvalue="Python tests.Unittests for finder.BoyerMooreTester" />
       <item itemvalue="Python tests.Unittests for finder.KMPTester" />
       <item itemvalue="Python tests.Unittests for chronograph.ChronoTester" />
       <item itemvalue="Python tests.Unittests for chronograph.ChronoTester.test_measure_accurate" />
       <item itemvalue="Python tests.Unittests for chronograph.ChronoTester.test_measure_text_parts" />
+      <item itemvalue="Python tests.Unittests for textgen.Tester.test_generation" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Unittests for textgen.Tester.test_generation" />
         <item itemvalue="Python tests.Unittests for chronograph.ChronoTester.test_measure_text_parts" />
         <item itemvalue="Python tests.Unittests for chronograph.ChronoTester.test_measure_accurate" />
         <item itemvalue="Python tests.Unittests for chronograph.ChronoTester" />
         <item itemvalue="Python tests.Unittests for finder.KMPTester" />
-        <item itemvalue="Python tests.Unittests for finder.BoyerMooreTester" />
       </list>
     </recent_temporary>
   </component>
@@ -302,35 +307,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_for_chronograph_ChronoTester_test_measure_accurate - 2019.04.28 at 11h 49m 47s.xml">
-      <configuration name="Unittests for chronograph.ChronoTester.test_measure_accurate" configurationId="tests" />
+    <history-entry file="Unittests_for_textgen_Tester_test_generation - 2019.04.28 at 14h 53m 52s.xml">
+      <configuration name="Unittests for textgen.Tester.test_generation" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_chronograph_ChronoTester_test_measure_accurate - 2019.04.28 at 11h 50m 58s.xml">
-      <configuration name="Unittests for chronograph.ChronoTester.test_measure_accurate" configurationId="tests" />
+    <history-entry file="Unittests_for_textgen_Tester_test_generation - 2019.04.28 at 14h 53m 53s.xml">
+      <configuration name="Unittests for textgen.Tester.test_generation" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_chronograph_ChronoTester_test_measure_text_parts - 2019.04.28 at 12h 43m 13s.xml">
-      <configuration name="Unittests for chronograph.ChronoTester.test_measure_text_parts" configurationId="tests" />
+    <history-entry file="Unittests_for_textgen_Tester_test_generation - 2019.04.28 at 14h 53m 54s.xml">
+      <configuration name="Unittests for textgen.Tester.test_generation" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_chronograph_ChronoTester_test_measure_text_parts - 2019.04.28 at 12h 44m 51s.xml">
-      <configuration name="Unittests for chronograph.ChronoTester.test_measure_text_parts" configurationId="tests" />
+    <history-entry file="Unittests_for_textgen_Tester_test_generation - 2019.04.28 at 14h 58m 08s.xml">
+      <configuration name="Unittests for textgen.Tester.test_generation" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_chronograph_ChronoTester_test_measure_text_parts - 2019.04.28 at 12h 46m 17s.xml">
-      <configuration name="Unittests for chronograph.ChronoTester.test_measure_text_parts" configurationId="tests" />
+    <history-entry file="Unittests_for_textgen_Tester_test_generation - 2019.04.28 at 14h 58m 19s.xml">
+      <configuration name="Unittests for textgen.Tester.test_generation" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_chronograph_ChronoTester_test_measure_text_parts - 2019.04.28 at 12h 46m 21s.xml">
-      <configuration name="Unittests for chronograph.ChronoTester.test_measure_text_parts" configurationId="tests" />
+    <history-entry file="Unittests_for_textgen_Tester_test_generation - 2019.04.28 at 14h 59m 36s.xml">
+      <configuration name="Unittests for textgen.Tester.test_generation" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_chronograph_ChronoTester_test_measure_text_parts - 2019.04.28 at 12h 46m 57s.xml">
-      <configuration name="Unittests for chronograph.ChronoTester.test_measure_text_parts" configurationId="tests" />
+    <history-entry file="Unittests_for_textgen_Tester_test_generation - 2019.04.28 at 15h 02m 06s.xml">
+      <configuration name="Unittests for textgen.Tester.test_generation" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_chronograph_ChronoTester_test_measure_text_parts - 2019.04.28 at 12h 47m 35s.xml">
-      <configuration name="Unittests for chronograph.ChronoTester.test_measure_text_parts" configurationId="tests" />
+    <history-entry file="Unittests_for_textgen_Tester_test_generation - 2019.04.28 at 15h 03m 40s.xml">
+      <configuration name="Unittests for textgen.Tester.test_generation" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_chronograph_ChronoTester_test_measure_text_parts - 2019.04.28 at 12h 48m 18s.xml">
-      <configuration name="Unittests for chronograph.ChronoTester.test_measure_text_parts" configurationId="tests" />
+    <history-entry file="Unittests_for_textgen_Tester_test_generation - 2019.04.28 at 15h 03m 44s.xml">
+      <configuration name="Unittests for textgen.Tester.test_generation" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_chronograph_ChronoTester_test_measure_text_parts - 2019.04.28 at 12h 51m 27s.xml">
-      <configuration name="Unittests for chronograph.ChronoTester.test_measure_text_parts" configurationId="tests" />
+    <history-entry file="Unittests_for_textgen_Tester_test_generation - 2019.04.28 at 15h 04m 44s.xml">
+      <configuration name="Unittests for textgen.Tester.test_generation" configurationId="tests" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -486,21 +491,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/textgen.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/memograph.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/chronograph.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="835">
-          <caret line="110" lean-forward="true" selection-start-line="110" selection-end-line="110" />
+        <state relative-caret-position="1040">
+          <caret line="52" column="12" lean-forward="true" selection-start-line="52" selection-start-column="12" selection-end-line="52" selection-end-column="12" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/textgen.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="7" column="48" lean-forward="true" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/memograph.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>

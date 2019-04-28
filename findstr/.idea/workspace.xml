@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f3bba32f-3c76-4fd7-a224-5ff60cd82aa2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/grapher.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chronograph.py" beforeDir="false" afterPath="$PROJECT_DIR$/chronograph.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/findstr.py" beforeDir="false" afterPath="$PROJECT_DIR$/findstr.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grapher.py" beforeDir="false" afterPath="$PROJECT_DIR$/grapher.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/textgen.py" beforeDir="false" afterPath="$PROJECT_DIR$/textgen.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,22 +20,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/findstr.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="411">
-              <caret line="21" column="35" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
+            <state relative-caret-position="451">
+              <caret line="23" selection-start-line="23" selection-end-line="27" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/chronograph.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="591">
-              <caret line="98" column="48" selection-start-line="98" selection-start-column="48" selection-end-line="98" selection-end-column="48" />
-              <folding>
-                <element signature="e#0#20#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -45,8 +32,23 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/grapher.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="20">
-              <caret line="1" column="17" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="17" />
+            <state relative-caret-position="557">
+              <caret line="44" column="30" lean-forward="true" selection-start-line="44" selection-start-column="30" selection-end-line="44" selection-end-column="30" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/chronograph.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="497">
+              <caret line="51" column="21" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
+              <folding>
+                <element signature="e#0#20#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -59,8 +61,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/textgen.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="7" column="48" lean-forward="true" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="48" />
+            <state relative-caret-position="591">
+              <caret line="63" column="23" selection-start-line="63" selection-start-column="23" selection-end-line="63" selection-end-column="23" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -98,9 +100,9 @@
         <option value="$PROJECT_DIR$/finder.py" />
         <option value="$PROJECT_DIR$/pattern.txt" />
         <option value="$PROJECT_DIR$/memograph.py" />
+        <option value="$PROJECT_DIR$/findstr.py" />
         <option value="$PROJECT_DIR$/textgen.py" />
         <option value="$PROJECT_DIR$/chronograph.py" />
-        <option value="$PROJECT_DIR$/findstr.py" />
         <option value="$PROJECT_DIR$/grapher.py" />
       </list>
     </option>
@@ -150,7 +152,28 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.findstr main">
+  <component name="RunManager" selected="Python.Graphing">
+    <configuration name="Graphing" type="PythonConfigurationType" factoryName="Python">
+      <module name="findstr" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/usr/local/bin/python3.6" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/grapher.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="findstr main" type="PythonConfigurationType" factoryName="Python">
       <module name="findstr" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -217,21 +240,6 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for finder.KMPTester" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <module name="findstr" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_pattern" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;finder.KMPTester&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
     <configuration name="Unittests for textgen.Tester.test_generation" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="findstr" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -244,6 +252,21 @@
       <option name="_new_pattern" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;textgen.Tester.test_generation&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests for textgen.Tester.test_text_substring_generation_small" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="findstr" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_pattern" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;textgen.Tester.test_text_substring_generation_small&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -279,20 +302,21 @@
     </configuration>
     <list>
       <item itemvalue="Python.findstr main" />
+      <item itemvalue="Python.Graphing" />
       <item itemvalue="Python tests.Unittests in findstr.py" />
-      <item itemvalue="Python tests.Unittests for finder.KMPTester" />
       <item itemvalue="Python tests.Unittests for chronograph.ChronoTester" />
       <item itemvalue="Python tests.Unittests for chronograph.ChronoTester.test_measure_accurate" />
       <item itemvalue="Python tests.Unittests for chronograph.ChronoTester.test_measure_text_parts" />
       <item itemvalue="Python tests.Unittests for textgen.Tester.test_generation" />
+      <item itemvalue="Python tests.Unittests for textgen.Tester.test_text_substring_generation_small" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Unittests for textgen.Tester.test_text_substring_generation_small" />
         <item itemvalue="Python tests.Unittests for chronograph.ChronoTester.test_measure_text_parts" />
         <item itemvalue="Python tests.Unittests for chronograph.ChronoTester" />
         <item itemvalue="Python tests.Unittests for textgen.Tester.test_generation" />
         <item itemvalue="Python tests.Unittests for chronograph.ChronoTester.test_measure_accurate" />
-        <item itemvalue="Python tests.Unittests for finder.KMPTester" />
       </list>
     </recent_temporary>
   </component>
@@ -332,35 +356,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_for_textgen_Tester_test_generation - 2019.04.28 at 15h 03m 44s.xml">
-      <configuration name="Unittests for textgen.Tester.test_generation" configurationId="tests" />
+    <history-entry file="Unittests_for_textgen_Tester_test_text_substring_generation_small - 2019.04.28 at 19h 17m 51s.xml">
+      <configuration name="Unittests for textgen.Tester.test_text_substring_generation_small" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_textgen_Tester_test_generation - 2019.04.28 at 15h 04m 44s.xml">
-      <configuration name="Unittests for textgen.Tester.test_generation" configurationId="tests" />
+    <history-entry file="Unittests_for_textgen_Tester_test_text_substring_generation_small - 2019.04.28 at 19h 17m 52s.xml">
+      <configuration name="Unittests for textgen.Tester.test_text_substring_generation_small" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_chronograph_ChronoTester - 2019.04.28 at 15h 28m 44s.xml">
-      <configuration name="Unittests for chronograph.ChronoTester" configurationId="tests" />
+    <history-entry file="Unittests_for_textgen_Tester_test_text_substring_generation_small - 2019.04.28 at 19h 17m 54s.xml">
+      <configuration name="Unittests for textgen.Tester.test_text_substring_generation_small" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_chronograph_ChronoTester_test_measure_text_parts - 2019.04.28 at 15h 29m 20s.xml">
-      <configuration name="Unittests for chronograph.ChronoTester.test_measure_text_parts" configurationId="tests" />
+    <history-entry file="Unittests_for_textgen_Tester_test_text_substring_generation_small - 2019.04.28 at 19h 18m 02s.xml">
+      <configuration name="Unittests for textgen.Tester.test_text_substring_generation_small" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_chronograph_ChronoTester_test_measure_text_parts - 2019.04.28 at 15h 29m 26s.xml">
-      <configuration name="Unittests for chronograph.ChronoTester.test_measure_text_parts" configurationId="tests" />
+    <history-entry file="Unittests_for_textgen_Tester_test_text_substring_generation_small - 2019.04.28 at 19h 18m 52s.xml">
+      <configuration name="Unittests for textgen.Tester.test_text_substring_generation_small" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_chronograph_ChronoTester_test_measure_text_parts - 2019.04.28 at 15h 30m 12s.xml">
-      <configuration name="Unittests for chronograph.ChronoTester.test_measure_text_parts" configurationId="tests" />
+    <history-entry file="Unittests_for_textgen_Tester_test_text_substring_generation_small - 2019.04.28 at 19h 18m 59s.xml">
+      <configuration name="Unittests for textgen.Tester.test_text_substring_generation_small" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_chronograph_ChronoTester_test_measure_text_parts - 2019.04.28 at 15h 30m 19s.xml">
-      <configuration name="Unittests for chronograph.ChronoTester.test_measure_text_parts" configurationId="tests" />
+    <history-entry file="Unittests_for_textgen_Tester_test_text_substring_generation_small - 2019.04.28 at 19h 19m 00s.xml">
+      <configuration name="Unittests for textgen.Tester.test_text_substring_generation_small" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_chronograph_ChronoTester_test_measure_text_parts - 2019.04.28 at 15h 30m 48s.xml">
-      <configuration name="Unittests for chronograph.ChronoTester.test_measure_text_parts" configurationId="tests" />
+    <history-entry file="Unittests_for_textgen_Tester_test_text_substring_generation_small - 2019.04.28 at 19h 19m 05s.xml">
+      <configuration name="Unittests for textgen.Tester.test_text_substring_generation_small" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_chronograph_ChronoTester - 2019.04.28 at 15h 32m 06s.xml">
-      <configuration name="Unittests for chronograph.ChronoTester" configurationId="tests" />
+    <history-entry file="Unittests_for_textgen_Tester_test_text_substring_generation_small - 2019.04.28 at 19h 19m 08s.xml">
+      <configuration name="Unittests for textgen.Tester.test_text_substring_generation_small" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_chronograph_ChronoTester_test_measure_text_parts - 2019.04.28 at 15h 34m 45s.xml">
-      <configuration name="Unittests for chronograph.ChronoTester.test_measure_text_parts" configurationId="tests" />
+    <history-entry file="Unittests_for_textgen_Tester_test_text_substring_generation_small - 2019.04.28 at 19h 19m 22s.xml">
+      <configuration name="Unittests for textgen.Tester.test_text_substring_generation_small" configurationId="tests" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -376,12 +400,12 @@
     <frame x="0" y="0" width="2560" height="1440" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.113088176" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.113088176" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24990115" />
       <window_info id="Favorites" order="2" side_tool="true" weight="0.32977462" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3295796" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.26946566" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.26946566" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39923665" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -395,13 +419,13 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.113088176" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.113088176" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24990115" />
       <window_info id="Favorites" order="2" side_tool="true" weight="0.32977462" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3295796" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.265015" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3993994" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.26946566" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39923665" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3295796" />
@@ -513,12 +537,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/textgen.py">
+    <entry file="file://$PROJECT_DIR$/findstr.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="7" column="48" lean-forward="true" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="48" />
+        <state relative-caret-position="451">
+          <caret line="23" selection-start-line="23" selection-end-line="27" />
           <folding>
-            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#0#21#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -526,20 +550,20 @@
     <entry file="file://$PROJECT_DIR$/memograph.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/findstr.py">
+    <entry file="file://$PROJECT_DIR$/textgen.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="21" column="35" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
+        <state relative-caret-position="591">
+          <caret line="63" column="23" selection-start-line="63" selection-start-column="23" selection-end-line="63" selection-end-column="23" />
           <folding>
-            <element signature="e#0#21#0" expanded="true" />
+            <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/chronograph.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="591">
-          <caret line="98" column="48" selection-start-line="98" selection-start-column="48" selection-end-line="98" selection-end-column="48" />
+        <state relative-caret-position="497">
+          <caret line="51" column="21" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>
@@ -548,8 +572,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/grapher.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="1" column="17" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="17" />
+        <state relative-caret-position="557">
+          <caret line="44" column="30" lean-forward="true" selection-start-line="44" selection-start-column="30" selection-end-line="44" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

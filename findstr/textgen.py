@@ -59,3 +59,14 @@ class Tester(unittest.TestCase):
         self.assertTrue(p in t)
         print(f'<P>{p}</P>')
         print(f'<T>{t}</T>')
+
+    def test_text_substring_generation_small(self):
+        text_size = 100
+        patten_size = 1
+        gen = Textgen('text.txt')
+        t, p = gen.generate(text_size, patten_size)
+        self.assertEqual(len(t), text_size)
+        self.assertEqual(len(p), patten_size, f'{p}')
+        self.assertTrue(p in t)
+        print(f'<P>{p}</P>')
+        print(f'<T>{t}</T>')

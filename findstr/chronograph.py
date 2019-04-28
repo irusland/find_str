@@ -41,13 +41,15 @@ class Chronograph:
     def measure_text_parts(self, text, pattern, part_count):
         part_len = round(len(text) / part_count)
         length = part_len
+        result = []
         while length < len(text):
             text_to_search = text[:length]
             length += part_len
             if len(text) - (length - part_len) < part_len:
                 text_to_search = text
             time = self.measure_accurate(text_to_search, pattern)
-            yield (length, len(pattern), time)
+            result.append((length, len(pattern), time))
+        return result
 
 
 class ChronoTester(unittest.TestCase):

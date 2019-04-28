@@ -1,6 +1,7 @@
 import time as timer
 import unittest
 import finder
+from textgen import *
 
 
 class Chronograph:
@@ -37,8 +38,7 @@ class Chronograph:
             return time / cycles
         return time
 
-    def measure_text_parts(self, part_count):
-        text, pattern = self.open_file()
+    def measure_text_parts(self, text, pattern, part_count):
         part_len = round(len(text) / part_count)
         length = part_len
         while length < len(text):
@@ -48,9 +48,6 @@ class Chronograph:
                 text_to_search = text
             time = self.measure_accurate(text_to_search, pattern)
             yield (length, len(pattern), time)
-
-    def measure_generator(self, generator):
-        pass
 
 
 class ChronoTester(unittest.TestCase):
@@ -98,7 +95,8 @@ class ChronoTester(unittest.TestCase):
 
     def test_measure_text_parts(self):
         c = Chronograph(finder.Hash, finder.Hash.Linear)
-        part_times = c.measure_text_parts(3)
+        t, p = Textgen('text.txt').generate(1000)
+        part_times = c.measure_text_parts(t, p, 3)
         count = 0
         current = (0, 0, 0)
         for part in part_times:

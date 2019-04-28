@@ -1,230 +1,39 @@
-#!/usr/bin/python3.6
-
-import unittest
+from tkinter import *
+import math
+from chronograph import *
+from textgen import *
 from finder import *
-from result import *
 
+root = Tk()
+root.title('grapher')
+root.geometry('1020x620')
 
-def main():
-    methods = [
-        BruteForce,
-        # Hash.Linear,
-        # Hash.Quad,
-        # Hash.RabinKarph,
-        Automate,
-        BoyerMoore,
-        KMP
-    ]
-    for method in methods:
-        result = method('aa').search('aaaa')
-        result.log()
+canvas = Canvas(root, width=1020, height=620, bg='#999')
 
+for y in range(21):
+    k = 50 * y
+    canvas.create_line(10+k, 610, 10+k, 10, width=1, fill='#191938')
 
-if __name__ == '__main__':
-    main()
+for x in range(13):
+    k = 50 * x
+    canvas.create_line(10, 10+k, 1010, 10+k, width=1, fill='#191938')
 
+canvas.create_line(60, 10, 60, 610, width=1, arrow=FIRST, fill='white')
+canvas.create_line(0, 560, 1010, 560, width=1, arrow=LAST, fill='white')
 
-class Tester(unittest.TestCase):
-    def assert_result(self, expected, actual, msg):
-        self.assertTrue(hasattr(expected, 'found_indexes'))
-        self.assertTrue(hasattr(actual, 'found_indexes'))
+text_size = 10000
+part_count = 10
+text, pattern = Textgen('text.txt').generate(text_size)
+bruteforce = Chronograph(BruteForce).measure_text_parts(text, pattern, part_count)
 
-        self.assertListEqual(expected.found_indexes,
-                             actual.found_indexes,
-                             msg)
+xy = []
+for length, m, time in bruteforce:
+    x = length / 10
+    y = -(time * 1000000) + 310
+    xy.append(x)
+    xy.append(y)
 
-    def get_search_result_in_text(self, method, text, pattern,
-                                  hash_method=None):
-        self.assertTrue(hasattr(method, 'search'))
-        if hash_method is not None:
-            return method(pattern, hash_method).search(text)
-        return method(pattern).search(text)
+sin_line = canvas.create_line(xy, fill='red')
 
-    def run_and_display(self, method, text, sub_string, test_name, expected,
-                        hash_method=None):
-        with self.subTest(f'{method.__name__}.{hash_method} '
-                          f'on test \"{test_name}\"'):
-            if hash_method is not None:
-                actual = self.get_search_result_in_text(
-                    method, text, sub_string, hash_method)
-            else:
-                actual = self.get_search_result_in_text(
-                    method, text, sub_string)
-            msg = f'\nTEXT: {text} :TEXT\nSUB: {sub_string} :SUB'
-            self.assert_result(expected, actual, msg)
-
-    @staticmethod
-    def parse(test):
-        data = test.readlines()
-        answer = data[-1]
-        text = data[:-1]
-        text_str = ''.join(map(str, text))[:-1]
-        text_str = text_str[:-1]
-        return text_str, answer
-
-    def test_all(self):
-        methods = [
-            BruteForce,
-            Hash,
-            Automate,
-            BoyerMoore,
-            KMP
-        ]
-        hash_methods = [
-            Hash.Linear,
-            Hash.Quad,
-            Hash.RabinKarph
-        ]
-        tests_strings = [
-            (
-                '3 times substring',
-                'aaa',
-                'a',
-                [0, 1, 2]
-            ),
-
-            (
-                '2 times substring',
-                'aba',
-                'a',
-                [0, 2]
-            ),
-
-            (
-                'nothing found',
-                'b',
-                'a',
-                []
-            ),
-
-            (
-                'nothing to search in',
-                '',
-                'a',
-                []
-            ),
-
-            (
-                'one match',
-                'a',
-                'a',
-                [0]
-            ),
-
-            (
-                'more than exists',
-                'a',
-                'aa',
-                []
-            ),
-
-            (
-                'one 2 char match',
-                'aa',
-                'aa',
-                [0]
-            ),
-
-            (
-                'triple overlay',
-                'aaaa',
-                'aa',
-                [0, 1, 2]
-            ),
-
-            (
-                'double overlay',
-                'aaaa',
-                'aaa',
-                [0, 1]
-            ),
-
-            (
-                'single match',
-                'aaaba',
-                'aaa',
-                [0]
-            ),
-
-            (
-                'not found on last pos',
-                'abcabcab',
-                'abc',
-                [0, 3]
-            ),
-
-            (
-                'template with separators',
-                'ab ab ab',
-                'ab',
-                [0, 3, 6]
-            ),
-
-            (
-                'reverse repeated template',
-                'ababababababababab',
-                'bb',
-                []
-            ),
-
-            (
-                'match',
-                'abbaabbaabbbabaabaabbabbaabbbaabbabbbbbbaaaabbaaabbaaaaaabb',
-                'aabba',
-                [3, 17, 29, 42, 47]
-            ),
-
-            (
-                'no matches',
-                'baabbbbbbababababaaaaabbaababbbabaa'
-                'aabbbbaabbaaaaaabbabbaabbbbaab',
-                'aaabab',
-                []
-            ),
-
-            (
-                'chaotic',
-                'abaababbbabababbbbabababbbabbabbabaabaababbaaaabbbbababaabb',
-                'bbaba',
-                [7, 16, 30, 49]
-            )
-        ]
-
-        tests_files = [
-            ('big', 'tests/06.tst', 'tests/06.ans'),
-            ('medium', 'tests/07.tst', 'tests/07.ans'),
-            ('long', 'tests/08.tst', 'tests/08.ans')
-        ]
-
-        for method in methods:
-            with self.subTest(f'{method.__name__} DONE'):
-                for test_name, text, sub_string, expected in tests_strings:
-                    if method.__name__ == 'Hash':
-                        for hash_method in hash_methods:
-                            self.run_and_display(method, text, sub_string,
-                                                 test_name, Result(expected),
-                                                 hash_method)
-                    else:
-                        self.run_and_display(method, text, sub_string,
-                                             test_name, Result(expected))
-
-                for test_name, file_test, file_ans in tests_files:
-                    with open(file_test) as test:
-                        text, sub_string = Tester.parse(test)
-                        with open(file_ans) as answer:
-                            indexes = []
-                            for line in answer:
-                                number = line[:-1]
-                                if len(number) > 0:
-                                    indexes.append(int(number))
-                            expected = Result(indexes)
-                            if method.__name__ == 'Hash':
-                                for hash_method in hash_methods:
-                                    self.run_and_display(method, text,
-                                                         sub_string,
-                                                         test_name,
-                                                         expected,
-                                                         hash_method)
-                            else:
-                                self.run_and_display(method, text, sub_string,
-                                                     test_name, expected)
+canvas.pack()
+root.mainloop()

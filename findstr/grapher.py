@@ -28,6 +28,7 @@ def points_to_2darrays(tuples3d, t_size, p_size, parts_count):
 
 a = time.time()
 
+# TODO UNCOMMENT IF YOU WANT TO RECOUNT POINTS
 # brute_points = []
 # hash_linear_points = []
 # hash_quad_points = []

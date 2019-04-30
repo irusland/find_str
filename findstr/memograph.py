@@ -20,11 +20,9 @@ class Runner(StoppableThread):
         print("started")
 
     def cleanup(self):
-        # Overload the cleanup function
         print("completed")
 
     def mainloop(self):
-        # Start the library Call
         if self.params is not None:
             self.results = self.algorithm(self.pattern, self.params).search(
                 self.text)
@@ -54,34 +52,39 @@ class Memograph:
         mythread.start()
 
         start_mem = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
-        delta_mem = 0
-        max_memory = 0
+        mid_memory = 0
+        count = 1
         memory_usage_refresh = .005
         result = []
 
         while True:
             time.sleep(memory_usage_refresh)
-            current_mem = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
-            delta_mem = current_mem - start_mem
-            if delta_mem > max_memory:
-                max_memory = delta_mem
-            print("Memory Usage During Call: %d MB" % (delta_mem / 1000))
+            delta_mem = (resource.getrusage(resource.RUSAGE_SELF).ru_maxrss) - start_mem
+
+            mid_memory /= count
+            mid_memory += delta_mem
+            count += 1
+            mid_memory *= count
+
+            # print(f'Memory Usage During Call: {delta_mem} B')
             if mythread.isShutdown():
                 print(mythread.results.time)
                 break
 
-        print("MAX Memory Usage in MB: " + str(round(max_memory / 1000.0, 3)))
+        # print("Memory Usage in Bytes: " + str(round(mid_memory)))
         result.append((len(self.text),
                        len(self.pattern),
-                       round(max_memory / 1000.0, 3)))
+                       round(mid_memory)))
         return result
 
 
 class Tester(unittest.TestCase):
     def test_measure(self):
-        text, pattern = Textgen('text.txt').generate(1000000)
-        results = Memograph(finder.Hash, text, pattern,
-                            finder.Hash.Linear).measure()
+        text, pattern = Textgen('text.txt').generate(100000, 1000)
+        results = Memograph(finder.BruteForce, text, pattern).measure()
         print(f'{results}')
-        # results = Memograph(finder.BoyerMoore, text, pattern).measure()
-        # print(results)
+        results = Memograph(finder.Hash, text, pattern,
+                            finder.Hash.RabinKarph).measure()
+        print(f'{results}')
+        results = Memograph(finder.Automate, text, pattern).measure()
+        print(f'{results}')

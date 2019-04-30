@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f3bba32f-3c76-4fd7-a224-5ff60cd82aa2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/grapher.py" beforeDir="false" afterPath="$PROJECT_DIR$/grapher.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stoppable_thread.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/memograph.py" beforeDir="false" afterPath="$PROJECT_DIR$/memograph.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,7 +20,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/findstr.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="451">
+            <state relative-caret-position="380">
               <caret line="23" selection-start-line="23" selection-end-line="27" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
@@ -27,11 +29,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grapher.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
-              <caret line="61" selection-start-line="61" selection-end-line="61" />
+            <state relative-caret-position="790">
+              <caret line="62" selection-start-line="62" selection-end-line="62" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -42,8 +44,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/chronograph.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1020">
-              <caret line="51" column="21" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
+            <state relative-caret-position="441">
+              <caret line="40" column="20" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="20" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
@@ -53,13 +55,32 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/memograph.py">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="68" column="27" lean-forward="true" selection-start-line="68" selection-start-column="27" selection-end-line="68" selection-end-column="27" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/stoppable_thread.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="251">
+              <caret line="29" column="30" lean-forward="true" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
+              <folding>
+                <element signature="e#0#16#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/textgen.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="591">
+            <state relative-caret-position="1240">
               <caret line="63" column="23" selection-start-line="63" selection-start-column="23" selection-end-line="63" selection-end-column="23" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
@@ -97,11 +118,12 @@
         <option value="$PROJECT_DIR$/tests_source.py" />
         <option value="$PROJECT_DIR$/finder.py" />
         <option value="$PROJECT_DIR$/pattern.txt" />
-        <option value="$PROJECT_DIR$/memograph.py" />
         <option value="$PROJECT_DIR$/findstr.py" />
         <option value="$PROJECT_DIR$/textgen.py" />
         <option value="$PROJECT_DIR$/chronograph.py" />
         <option value="$PROJECT_DIR$/grapher.py" />
+        <option value="$PROJECT_DIR$/stoppable_thread.py" />
+        <option value="$PROJECT_DIR$/memograph.py" />
       </list>
     </option>
   </component>
@@ -115,7 +137,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -127,6 +148,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -150,7 +172,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Graphing">
+  <component name="RunManager" selected="Python tests.Test mem">
     <configuration name="Graphing" type="PythonConfigurationType" factoryName="Python">
       <module name="findstr" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -193,6 +215,42 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="memograph" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="findstr" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/memograph.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test mem" type="tests" factoryName="Unittests">
+      <module name="findstr" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_pattern" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/memograph.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
     <configuration name="Unittests for chronograph.ChronoTester" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="findstr" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -205,21 +263,6 @@
       <option name="_new_pattern" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;chronograph.ChronoTester&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Unittests for chronograph.ChronoTester.test_measure_accurate" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <module name="findstr" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_pattern" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;chronograph.ChronoTester.test_measure_accurate&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -301,20 +344,21 @@
     <list>
       <item itemvalue="Python.findstr main" />
       <item itemvalue="Python.Graphing" />
+      <item itemvalue="Python.memograph" />
+      <item itemvalue="Python tests.Test mem" />
       <item itemvalue="Python tests.Unittests in findstr.py" />
       <item itemvalue="Python tests.Unittests for chronograph.ChronoTester" />
-      <item itemvalue="Python tests.Unittests for chronograph.ChronoTester.test_measure_accurate" />
       <item itemvalue="Python tests.Unittests for chronograph.ChronoTester.test_measure_text_parts" />
       <item itemvalue="Python tests.Unittests for textgen.Tester.test_generation" />
       <item itemvalue="Python tests.Unittests for textgen.Tester.test_text_substring_generation_small" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.memograph" />
         <item itemvalue="Python tests.Unittests for textgen.Tester.test_text_substring_generation_small" />
         <item itemvalue="Python tests.Unittests for chronograph.ChronoTester.test_measure_text_parts" />
         <item itemvalue="Python tests.Unittests for chronograph.ChronoTester" />
         <item itemvalue="Python tests.Unittests for textgen.Tester.test_generation" />
-        <item itemvalue="Python tests.Unittests for chronograph.ChronoTester.test_measure_accurate" />
       </list>
     </recent_temporary>
   </component>
@@ -354,35 +398,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_for_textgen_Tester_test_text_substring_generation_small - 2019.04.28 at 19h 17m 51s.xml">
-      <configuration name="Unittests for textgen.Tester.test_text_substring_generation_small" configurationId="tests" />
+    <history-entry file="Test_mem - 2019.04.30 at 22h 31m 59s.xml">
+      <configuration name="Test mem" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_textgen_Tester_test_text_substring_generation_small - 2019.04.28 at 19h 17m 52s.xml">
-      <configuration name="Unittests for textgen.Tester.test_text_substring_generation_small" configurationId="tests" />
+    <history-entry file="Test_mem - 2019.04.30 at 22h 32m 05s.xml">
+      <configuration name="Test mem" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_textgen_Tester_test_text_substring_generation_small - 2019.04.28 at 19h 17m 54s.xml">
-      <configuration name="Unittests for textgen.Tester.test_text_substring_generation_small" configurationId="tests" />
+    <history-entry file="Test_mem - 2019.04.30 at 22h 32m 36s.xml">
+      <configuration name="Test mem" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_textgen_Tester_test_text_substring_generation_small - 2019.04.28 at 19h 18m 02s.xml">
-      <configuration name="Unittests for textgen.Tester.test_text_substring_generation_small" configurationId="tests" />
+    <history-entry file="Test_mem - 2019.04.30 at 22h 32m 38s.xml">
+      <configuration name="Test mem" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_textgen_Tester_test_text_substring_generation_small - 2019.04.28 at 19h 18m 52s.xml">
-      <configuration name="Unittests for textgen.Tester.test_text_substring_generation_small" configurationId="tests" />
+    <history-entry file="Test_mem - 2019.04.30 at 22h 32m 40s.xml">
+      <configuration name="Test mem" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_textgen_Tester_test_text_substring_generation_small - 2019.04.28 at 19h 18m 59s.xml">
-      <configuration name="Unittests for textgen.Tester.test_text_substring_generation_small" configurationId="tests" />
+    <history-entry file="Test_mem - 2019.04.30 at 22h 32m 46s.xml">
+      <configuration name="Test mem" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_textgen_Tester_test_text_substring_generation_small - 2019.04.28 at 19h 19m 00s.xml">
-      <configuration name="Unittests for textgen.Tester.test_text_substring_generation_small" configurationId="tests" />
+    <history-entry file="Test_mem - 2019.04.30 at 22h 32m 51s.xml">
+      <configuration name="Test mem" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_textgen_Tester_test_text_substring_generation_small - 2019.04.28 at 19h 19m 05s.xml">
-      <configuration name="Unittests for textgen.Tester.test_text_substring_generation_small" configurationId="tests" />
+    <history-entry file="Test_mem - 2019.04.30 at 22h 32m 53s.xml">
+      <configuration name="Test mem" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_textgen_Tester_test_text_substring_generation_small - 2019.04.28 at 19h 19m 08s.xml">
-      <configuration name="Unittests for textgen.Tester.test_text_substring_generation_small" configurationId="tests" />
+    <history-entry file="Test_mem - 2019.04.30 at 22h 32m 54s.xml">
+      <configuration name="Test mem" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_textgen_Tester_test_text_substring_generation_small - 2019.04.28 at 19h 19m 22s.xml">
-      <configuration name="Unittests for textgen.Tester.test_text_substring_generation_small" configurationId="tests" />
+    <history-entry file="Test_mem - 2019.04.30 at 22h 32m 55s.xml">
+      <configuration name="Test mem" configurationId="tests" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -398,7 +442,7 @@
     <frame x="0" y="0" width="2560" height="1440" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.113088176" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.113088176" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24990115" />
       <window_info id="Favorites" order="2" side_tool="true" weight="0.32977462" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -448,6 +492,11 @@
           <url>file://$PROJECT_DIR$/findstr.py</url>
           <line>29</line>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/memograph.py</url>
+          <line>81</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -535,39 +584,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/findstr.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="23" selection-start-line="23" selection-end-line="27" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/memograph.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/textgen.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="591">
-          <caret line="63" column="23" selection-start-line="63" selection-start-column="23" selection-end-line="63" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chronograph.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1020">
-          <caret line="51" column="21" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/umath.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
@@ -575,12 +591,69 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/findstr.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="23" selection-start-line="23" selection-end-line="27" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/textgen.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1240">
+          <caret line="63" column="23" selection-start-line="63" selection-start-column="23" selection-end-line="63" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/threading.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="381">
+          <caret line="827" column="8" selection-start-line="827" selection-start-column="8" selection-end-line="827" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/grapher.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="61" selection-start-line="61" selection-end-line="61" />
+        <state relative-caret-position="790">
+          <caret line="62" selection-start-line="62" selection-end-line="62" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chronograph.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="40" column="20" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/memograph.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="68" column="27" lean-forward="true" selection-start-line="68" selection-start-column="27" selection-end-line="68" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stoppable_thread.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="29" column="30" lean-forward="true" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
           </folding>
         </state>
       </provider>

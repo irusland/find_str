@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f3bba32f-3c76-4fd7-a224-5ff60cd82aa2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/findstr.py" beforeDir="false" afterPath="$PROJECT_DIR$/findstr.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/grapher.py" beforeDir="false" afterPath="$PROJECT_DIR$/grapher.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/memograph.py" beforeDir="false" afterPath="$PROJECT_DIR$/memograph.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stoppable_thread.py" beforeDir="false" afterPath="$PROJECT_DIR$/stoppable_thread.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,23 +17,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/findstr.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="40">
-              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+            <state relative-caret-position="159">
+              <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+              <folding>
+                <element signature="e#0#14#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/finder.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="807">
+              <caret line="457" column="52" selection-start-line="457" selection-start-column="52" selection-end-line="457" selection-end-column="52" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grapher.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1064">
-              <caret line="141" column="16" selection-start-line="141" selection-start-column="16" selection-end-line="141" selection-end-column="16" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-1629">
+              <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -43,7 +53,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/chronograph.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="441">
+            <state relative-caret-position="375">
               <caret line="40" column="20" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="20" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
@@ -55,29 +65,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/memograph.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="878">
-              <caret line="74" column="38" lean-forward="true" selection-start-line="74" selection-start-column="38" selection-end-line="74" selection-end-column="38" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/stoppable_thread.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="16" selection-start-column="16" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/textgen.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1240">
-              <caret line="63" column="23" selection-start-line="63" selection-start-column="23" selection-end-line="63" selection-end-column="23" />
+            <state relative-caret-position="171">
+              <caret line="53" column="41" lean-forward="true" selection-start-line="53" selection-start-column="41" selection-end-line="53" selection-end-column="41" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -100,6 +89,7 @@
       <find>PLGGiEwPuFPrqlfnyYCqFrsKJRcJoCTEEvaGyWgXgCzSKDoHvmZGcOLPeyQLIwnzzfjGR</find>
       <find>keys</find>
       <find>she</find>
+      <find>self.text = text</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -117,9 +107,9 @@
         <option value="$PROJECT_DIR$/textgen.py" />
         <option value="$PROJECT_DIR$/chronograph.py" />
         <option value="$PROJECT_DIR$/stoppable_thread.py" />
+        <option value="$PROJECT_DIR$/grapher.py" />
         <option value="$PROJECT_DIR$/memograph.py" />
         <option value="$PROJECT_DIR$/findstr.py" />
-        <option value="$PROJECT_DIR$/grapher.py" />
       </list>
     </option>
   </component>
@@ -133,6 +123,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -144,7 +135,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -394,34 +384,34 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Test_mem - 2019.04.30 at 23h 18m 45s.xml">
+    <history-entry file="Test_mem - 2019.05.01 at 09h 41m 45s.xml">
       <configuration name="Test mem" configurationId="tests" />
     </history-entry>
-    <history-entry file="Test_mem - 2019.04.30 at 23h 18m 46s.xml">
+    <history-entry file="Test_mem - 2019.05.01 at 10h 53m 26s.xml">
       <configuration name="Test mem" configurationId="tests" />
     </history-entry>
-    <history-entry file="Test_mem - 2019.04.30 at 23h 18m 48s.xml">
+    <history-entry file="Test_mem - 2019.05.01 at 10h 54m 02s.xml">
       <configuration name="Test mem" configurationId="tests" />
     </history-entry>
-    <history-entry file="Test_mem - 2019.04.30 at 23h 18m 49s.xml">
+    <history-entry file="Test_mem - 2019.05.01 at 10h 55m 49s.xml">
       <configuration name="Test mem" configurationId="tests" />
     </history-entry>
-    <history-entry file="Test_mem - 2019.04.30 at 23h 18m 51s.xml">
+    <history-entry file="Test_mem - 2019.05.01 at 10h 55m 56s.xml">
       <configuration name="Test mem" configurationId="tests" />
     </history-entry>
-    <history-entry file="Test_mem - 2019.04.30 at 23h 18m 55s.xml">
+    <history-entry file="Test_mem - 2019.05.01 at 10h 56m 01s.xml">
       <configuration name="Test mem" configurationId="tests" />
     </history-entry>
-    <history-entry file="Test_mem - 2019.04.30 at 23h 18m 57s.xml">
+    <history-entry file="Test_mem - 2019.05.01 at 10h 56m 06s.xml">
       <configuration name="Test mem" configurationId="tests" />
     </history-entry>
-    <history-entry file="Test_mem - 2019.04.30 at 23h 19m 06s.xml">
+    <history-entry file="Test_mem - 2019.05.01 at 10h 56m 15s.xml">
       <configuration name="Test mem" configurationId="tests" />
     </history-entry>
-    <history-entry file="Test_mem - 2019.04.30 at 23h 19m 09s.xml">
+    <history-entry file="Test_mem - 2019.05.01 at 10h 56m 19s.xml">
       <configuration name="Test mem" configurationId="tests" />
     </history-entry>
-    <history-entry file="Test_mem - 2019.04.30 at 23h 19m 11s.xml">
+    <history-entry file="Test_mem - 2019.05.01 at 10h 57m 12s.xml">
       <configuration name="Test mem" configurationId="tests" />
     </history-entry>
   </component>
@@ -436,13 +426,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="2560" height="1440" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.113088176" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24990115" />
       <window_info id="Favorites" order="2" side_tool="true" weight="0.32977462" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32900763" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.26946566" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.26946566" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39923665" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -485,7 +476,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/memograph.py</url>
-          <line>82</line>
+          <line>76</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
@@ -557,16 +548,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/finder.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests_source.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1226">
@@ -588,19 +569,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/3/unittest/__init__.pyi">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/textgen.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1240">
-          <caret line="63" column="23" selection-start-line="63" selection-start-column="23" selection-end-line="63" selection-end-column="23" />
+        <state relative-caret-position="100">
+          <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Library/Caches/PyCharmCE2018.3/python_stubs/-1199943127/resource.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2324" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/stoppable_thread.py">
@@ -610,22 +589,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/3/unittest/__init__.pyi">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/memograph.py">
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharmCE2018.3/python_stubs/-1199943127/resource.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="878">
-          <caret line="74" column="38" lean-forward="true" selection-start-line="74" selection-start-column="38" selection-end-line="74" selection-end-column="38" />
+        <state relative-caret-position="319">
+          <caret line="107" column="12" selection-start-line="107" selection-start-column="4" selection-end-line="107" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finder.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="807">
+          <caret line="457" column="52" selection-start-line="457" selection-start-column="52" selection-end-line="457" selection-end-column="52" />
           <folding>
-            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/chronograph.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
+        <state relative-caret-position="375">
           <caret line="40" column="20" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="20" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
@@ -633,19 +616,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/findstr.py">
+    <entry file="file://$PROJECT_DIR$/memograph.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        <state relative-caret-position="171">
+          <caret line="53" column="41" lean-forward="true" selection-start-line="53" selection-start-column="41" selection-end-line="53" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grapher.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1064">
-          <caret line="141" column="16" selection-start-line="141" selection-start-column="16" selection-end-line="141" selection-end-column="16" />
+        <state relative-caret-position="-1629">
+          <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/findstr.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
           <folding>
-            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#0#14#0" expanded="true" />
           </folding>
         </state>
       </provider>

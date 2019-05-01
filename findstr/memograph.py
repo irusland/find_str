@@ -17,10 +17,10 @@ class Runner(StoppableThread):
         self.results = None
 
     def startup(self):
-        print("started")
+        pass
 
     def cleanup(self):
-        print("completed")
+        pass
 
     def mainloop(self):
         if self.params is not None:
@@ -33,58 +33,51 @@ class Runner(StoppableThread):
 
 
 class Memograph:
-    def __init__(self, algorithm, text, pattern, params=None):
+    def __init__(self, algorithm, params=None):
         self.algorithm = algorithm
         self.params = params
-        self.text = text
-        self.pattern = pattern
+        # self.text = text
+        # self.pattern = pattern
 
-    def measure(self):
+    def measure(self, text, pattern):
         if self.params is not None:
             mythread = Runner(self.algorithm,
-                              self.text,
-                              self.pattern,
+                              text,
+                              pattern,
                               self.params)
         else:
             mythread = Runner(self.algorithm,
-                              self.text,
-                              self.pattern)
+                              text,
+                              pattern)
         mythread.start()
 
         start_mem = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
-        mid_memory = 0
-        count = 1
+        max_memory = 0
         memory_usage_refresh = .005
-        result = []
 
         while True:
             time.sleep(memory_usage_refresh)
-            delta_mem = (resource.getrusage(resource.RUSAGE_SELF).ru_maxrss) - start_mem
+            delta_mem = (resource.getrusage(resource.RUSAGE_SELF).ru_maxrss)\
+                        - start_mem
 
-            mid_memory /= count
-            mid_memory += delta_mem
-            count += 1
-            mid_memory *= count
+            if delta_mem > max_memory:
+                max_memory = delta_mem
 
             # print(f'Memory Usage During Call: {delta_mem} B')
             if mythread.isShutdown():
-                print(mythread.results.time)
+                # print(mythread.results.found_indexes)
                 break
 
-        # print("Memory Usage in Bytes: " + str(round(mid_memory)))
-        result.append((len(self.text),
-                       len(self.pattern),
-                       round(mid_memory)))
-        return result
+        # print("Memory Usage in Bytes: " + str(max_memory))
+        return round(max_memory / 2**20)
 
 
 class Tester(unittest.TestCase):
     def test_measure(self):
-        text, pattern = Textgen('text.txt').generate(100000, 1000)
-        results = Memograph(finder.BruteForce, text, pattern).measure()
+        text, pattern = Textgen('text.txt').generate(1000, 100)
+        results = Memograph(finder.BruteForce).measure(text, pattern)
         print(f'{results}')
-        results = Memograph(finder.Hash, text, pattern,
-                            finder.Hash.RabinKarph).measure()
+        results = Memograph(finder.Hash, finder.Hash.RabinKarph).measure(text, pattern)
         print(f'{results}')
-        results = Memograph(finder.Automate, text, pattern).measure()
+        results = Memograph(finder.KMP).measure(text, pattern)
         print(f'{results}')

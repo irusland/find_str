@@ -30,7 +30,10 @@ class Textgen:
 
         if is_word:
             split = rnd_text.split(' ')
-            yield split[random.randint(0, len(split) - 1)]
+            pattern = split[random.randint(0, len(split) - 1)]
+            while len(pattern) == 0:
+                pattern = split[random.randint(0, len(split) - 1)]
+            yield pattern
         else:
             i = random.randint(0, len(part))
             if i + pattern_size > len(part):

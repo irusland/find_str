@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f3bba32f-3c76-4fd7-a224-5ff60cd82aa2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/finder.py" beforeDir="false" afterPath="$PROJECT_DIR$/finder.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/findstr.py" beforeDir="false" afterPath="$PROJECT_DIR$/findstr.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grapher.py" beforeDir="false" afterPath="$PROJECT_DIR$/grapher.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/memograph.py" beforeDir="false" afterPath="$PROJECT_DIR$/memograph.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/textgen.py" beforeDir="false" afterPath="$PROJECT_DIR$/textgen.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,8 +21,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/findstr.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="159">
-              <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+            <state relative-caret-position="793">
+              <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
@@ -30,10 +31,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/textgen.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-29">
+              <caret line="35" column="25" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="25" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/finder.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="807">
-              <caret line="457" column="52" selection-start-line="457" selection-start-column="52" selection-end-line="457" selection-end-column="52" />
+            <state relative-caret-position="352">
+              <caret line="389" column="7" lean-forward="true" selection-start-line="389" selection-start-column="7" selection-end-line="389" selection-end-column="7" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -44,7 +57,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grapher.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1629">
+            <state relative-caret-position="40">
               <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="18" />
             </state>
           </provider>
@@ -53,7 +66,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/chronograph.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
+            <state relative-caret-position="740">
               <caret line="40" column="20" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="20" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
@@ -65,8 +78,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/memograph.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="53" column="41" lean-forward="true" selection-start-line="53" selection-start-column="41" selection-end-line="53" selection-end-column="41" />
+            <state relative-caret-position="940">
+              <caret line="53" column="41" selection-start-line="53" selection-start-column="41" selection-end-line="53" selection-end-column="41" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -102,13 +115,13 @@
         <option value="$PROJECT_DIR$/js" />
         <option value="$PROJECT_DIR$/result.py" />
         <option value="$PROJECT_DIR$/tests_source.py" />
-        <option value="$PROJECT_DIR$/finder.py" />
         <option value="$PROJECT_DIR$/pattern.txt" />
-        <option value="$PROJECT_DIR$/textgen.py" />
         <option value="$PROJECT_DIR$/chronograph.py" />
         <option value="$PROJECT_DIR$/stoppable_thread.py" />
         <option value="$PROJECT_DIR$/grapher.py" />
         <option value="$PROJECT_DIR$/memograph.py" />
+        <option value="$PROJECT_DIR$/finder.py" />
+        <option value="$PROJECT_DIR$/textgen.py" />
         <option value="$PROJECT_DIR$/findstr.py" />
       </list>
     </option>
@@ -572,16 +585,6 @@
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/3/unittest/__init__.pyi">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/textgen.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/stoppable_thread.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -596,19 +599,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/finder.py">
+    <entry file="file://$PROJECT_DIR$/grapher.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="807">
-          <caret line="457" column="52" selection-start-line="457" selection-start-column="52" selection-end-line="457" selection-end-column="52" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="40">
+          <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/chronograph.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
+        <state relative-caret-position="740">
           <caret line="40" column="20" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="20" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
@@ -618,25 +618,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/memograph.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="53" column="41" lean-forward="true" selection-start-line="53" selection-start-column="41" selection-end-line="53" selection-end-column="41" />
+        <state relative-caret-position="940">
+          <caret line="53" column="41" selection-start-line="53" selection-start-column="41" selection-end-line="53" selection-end-column="41" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grapher.py">
+    <entry file="file://$PROJECT_DIR$/finder.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1629">
-          <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="18" />
+        <state relative-caret-position="352">
+          <caret line="389" column="7" lean-forward="true" selection-start-line="389" selection-start-column="7" selection-end-line="389" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/textgen.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-29">
+          <caret line="35" column="25" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/findstr.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+        <state relative-caret-position="793">
+          <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
           </folding>

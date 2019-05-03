@@ -6,6 +6,11 @@ from tests_source import *
 
 
 class BruteForce:
+    """
+    Brute Force algorithm associated simply comparing every
+    substring char and pattern char until match
+    """
+
     def __init__(self, pattern):
         self.pattern = pattern
 
@@ -39,6 +44,11 @@ class BruteForceTester(unittest.TestCase):
 
 
 class Hash:
+    """
+    Hashing algorithm based on summarizing chars ordinals with a special
+    function to simplify strings comparison
+    """
+
     def __init__(self, pattern, hash_method):
         self.pattern = pattern
         self.hash_method = hash_method
@@ -174,6 +184,11 @@ class HashTester(unittest.TestCase):
 
 
 class Automate:
+    """
+    Automate algorithm has a preprocessing component it builds a table of
+    shifts out of pattern which is used during method execution
+    """
+
     def __init__(self, pattern):
         self.pattern = pattern
         self.table = self.get_table()
@@ -241,6 +256,11 @@ class AutomateTester(unittest.TestCase):
 
 
 class BoyerMoore:
+    """
+    Boyer Moore algorithm preprocess a pattern and builds shift tables for
+    "bad char" anb "good suffix" heuristics
+    """
+
     def __init__(self, pattern):
         self.pattern = pattern
         self.tx = ('*' * len(self.pattern)) + self.pattern
@@ -367,6 +387,11 @@ class BoyerMooreTester(unittest.TestCase):
 
 
 class KMP:
+    """
+    KMP or Knuth-Morris-Pratt's algorithm builds shift table with least common
+    subsequence method then uses it during search
+    """
+
     def __init__(self, pattern):
         self.pattern = pattern
         self.partial = self.partial()
@@ -423,38 +448,3 @@ class KMPTester(unittest.TestCase):
             with self.subTest(f'{pattern}'):
                 actual = KMP(pattern).partial
                 self.assertListEqual(result, actual)
-
-
-class SuffixArray:
-    @staticmethod
-    def build_suffix_array(text):
-        suffixes = []
-        for i in range(len(text)):
-            suffix = text[-(i + 1):]
-            suffixes.append((suffix, len(text) - i))
-        suffixes.sort(key=lambda tup: tup[0])
-        return suffixes
-
-    @staticmethod
-    def search(text, pattern):
-        pass
-
-    class Tester(unittest.TestCase):
-        def test_suffix_array_banana(self):
-            arr = SuffixArray.build_suffix_array('banana')
-            self.assertListEqual([('a', 6),
-                                  ('ana', 4),
-                                  ('anana', 2),
-                                  ('banana', 1),
-                                  ('na', 5),
-                                  ('nana', 3)], arr)
-
-        def test_suffix_array_abaab(self):
-            arr = SuffixArray.build_suffix_array('abaab')
-            self.assertListEqual([('aab', 3),
-                                  ('ab', 4),
-                                  ('abaab', 1),
-                                  ('b', 5),
-                                  ('baab', 2)], arr)
-
-

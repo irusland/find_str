@@ -16,7 +16,47 @@ def get_time(points):
 
 
 def main():
+    goal = 'This different substring search algorithms testing' \
+           'shows dependencies of a string preprocessing and other ' \
+           'methods of search optimizing'
+
+    specs = 'Processor: 3.4GHz Inter Core i5 \n' \
+            'Memory: 8 GB 1600 MHz DDR3 \n' \
+            'System: osx'
+
+    alg_doc = 'Documentation of following algorithms:'
+
+    results_explanation = 'Explanation:\n' \
+                          '* Brute Force is pretty stable alghorithm, ' \
+                          'works every time with O(n^2) asymptotic\n' \
+                          '* Hashes have a collision aspect that\'s why we ' \
+                          'can see an abrupt behavior change and time growth' \
+                          'on a bad substring\n' \
+                          '* Automate has a preprocessing aspect that\'s ' \
+                          'why we can see time growth\n' \
+                          '* Boyer Moore algorithm works perfectly with ' \
+                          'prepared pattern on every text but as we can see ' \
+                          'there is recounting shift tables time delay\n' \
+                          '* KMP works fine on average string its pretty ' \
+                          'stable\n'
+
+    summary = 'Summary:'
+
+    print(goal)
+    print(specs)
+    print()
+    print(alg_doc)
+    print(finder.BruteForce.__doc__)
+    print(finder.Hash.__doc__)
+    print(finder.Automate.__doc__)
+    print(finder.BoyerMoore.__doc__)
+    print(finder.KMP.__doc__)
+
     grapher.build_graph()
+
+    print(results_explanation)
+    print()
+    print(summary)
 
     sizes = [
         (100000, 0),
@@ -29,7 +69,8 @@ def main():
 
     for text_size, pattern_size in sizes:
         text, pattern = Textgen('text.txt').generate(text_size)
-        print(f'Generated: Text Length = {text_size}, Pattern Size = {pattern_size}')
+        print(f'Generated: Text Length = {text_size}, '
+              f'Pattern Size = {pattern_size}')
         results = [
             ('Brute Force',
              Chrono(finder.BruteForce).measure_accurate(text, pattern),
@@ -55,7 +96,7 @@ def main():
         ]
         results = sorted(results, key=lambda _: _[1])
         for name, time, memory in results:
-            print(f'{name}\n\t%.6f S \n\t{memory} MB\n' % time)
+            print(f'{name}\n\t%.6f S \n\t{memory} MB' % time)
 
 
 if __name__ == '__main__':

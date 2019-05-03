@@ -1,3 +1,4 @@
+from mpl_toolkits.mplot3d import axes3d
 import matplotlib.pyplot as plot
 import numpy as np
 from chronograph import Chronograph

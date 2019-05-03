@@ -15,8 +15,6 @@ class BruteForce:
         self.pattern = pattern
 
     def search(self, text):
-        time_start = timer.time()
-
         found_indexes = []
         collisions = 0
         for i in range(len(text) - len(self.pattern) + 1):
@@ -28,10 +26,7 @@ class BruteForce:
                     break
             if logic:
                 found_indexes.append(i)
-
-        time_stop = timer.time()
-        time = time_stop - time_start
-        return Result(found_indexes, collisions, time, BruteForce.__name__)
+        return Result(found_indexes, collisions, BruteForce.__name__)
 
 
 class BruteForceTester(unittest.TestCase):
@@ -54,7 +49,6 @@ class Hash:
         self.hash_method = hash_method
 
     def search(self, text):
-        time_start = timer.time()
         found_indexes = []
         sample_hash_sum = \
             self.hash_method.get_hash(self.pattern, len(self.pattern))
@@ -76,11 +70,8 @@ class Hash:
                     found_indexes.append(i)
                 else:
                     collisions += 1
-
-        time_stop = timer.time()
-        time = time_stop - time_start
         return Result(
-            found_indexes, collisions, time, self.hash_method.__name__)
+            found_indexes, collisions, self.hash_method.__name__)
 
     class Linear:
         @staticmethod
@@ -211,8 +202,6 @@ class Automate:
         return table
 
     def search(self, text):
-        time_start = timer.time()
-
         found_indexes = []
         collisions = 0
         current_state = 0
@@ -226,9 +215,7 @@ class Automate:
             if current_state == sample_length:
                 found_indexes.append(i - sample_length + 1)
 
-        time_stop = timer.time()
-        time = time_stop - time_start
-        return Result(found_indexes, collisions, time, 'Automate')
+        return Result(found_indexes, collisions, 'Automate')
 
 
 class AutomateTester(unittest.TestCase):
@@ -304,8 +291,6 @@ class BoyerMoore:
         return shift
 
     def search(self, text):
-        time_start = timer.time()
-
         collisions = 0
         m = len(self.pattern)
         i = 0
@@ -338,10 +323,7 @@ class BoyerMoore:
                         i += self.gs_table[match_streak]
                     match_streak = 0
                     break
-
-        time_stop = timer.time()
-        time = time_stop - time_start
-        return Result(indexes, collisions, time, 'Boyer moore')
+        return Result(indexes, collisions, 'Boyer moore')
 
 
 class BoyerMooreTester(unittest.TestCase):
@@ -409,8 +391,6 @@ class KMP:
         return table
 
     def search(self, text):
-        time_start = timer.time()
-
         indexes = []
         collisions = 0
         j = 0
@@ -425,9 +405,7 @@ class KMP:
                 indexes.append(i - (j - 1))
                 j = self.partial[j - 1]
 
-        time_stop = timer.time()
-        time = time_stop - time_start
-        return Result(indexes, collisions, time, "KMP")
+        return Result(indexes, collisions, "KMP")
 
 
 class KMPTester(unittest.TestCase):

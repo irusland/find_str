@@ -11,7 +11,7 @@ class StoppableThread(threading.Thread):
 
     def run(self):
         self.startup()
-        while self.isRunning():
+        while self.is_running():
             self.mainloop()
         self.cleanup()
         self.__has_shutdown = True
@@ -19,10 +19,10 @@ class StoppableThread(threading.Thread):
     def stop(self):
         self.__monitor.clear()
 
-    def isRunning(self):
+    def is_running(self):
         return self.__monitor.isSet()
 
-    def isShutdown(self):
+    def is_shutdown(self):
         return self.__has_shutdown
 
     def mainloop(self):

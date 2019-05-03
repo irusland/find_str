@@ -1,7 +1,6 @@
 import grapher
 from chronograph import Chronograph as Chrono
 from memograph import Memograph as Memo
-import memograph
 import finder
 from textgen import Textgen
 import numpy
@@ -76,13 +75,16 @@ def main():
              Chrono(finder.BruteForce).measure_accurate(text, pattern),
              Memo(finder.BruteForce).measure(text, pattern)),
             ('Hash Linear',
-             Chrono(finder.Hash, finder.Hash.Linear).measure_accurate(text, pattern),
+             Chrono(finder.Hash,
+                    finder.Hash.Linear).measure_accurate(text, pattern),
              Memo(finder.Hash, finder.Hash.Linear).measure(text, pattern)),
             ('Hash Quad',
-             Chrono(finder.Hash, finder.Hash.Quad).measure_accurate(text, pattern),
+             Chrono(finder.Hash,
+                    finder.Hash.Quad).measure_accurate(text, pattern),
              Memo(finder.Hash, finder.Hash.Quad).measure(text, pattern)),
             ('Hash RK',
-             Chrono(finder.Hash, finder.Hash.RabinKarph).measure_accurate(text, pattern),
+             Chrono(finder.Hash,
+                    finder.Hash.RabinKarph).measure_accurate(text, pattern),
              Memo(finder.Hash, finder.Hash.RabinKarph).measure(text, pattern)),
             ('Automate',
              Chrono(finder.Automate).measure_accurate(text, pattern),

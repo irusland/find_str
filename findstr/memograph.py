@@ -2,7 +2,7 @@ import resource
 import time
 import unittest
 import finder
-from textgen import *
+from textgen import Textgen
 
 from stoppable_thread import StoppableThread
 
@@ -36,8 +36,6 @@ class Memograph:
     def __init__(self, algorithm, params=None):
         self.algorithm = algorithm
         self.params = params
-        # self.text = text
-        # self.pattern = pattern
 
     def measure(self, text, pattern):
         if self.params is not None:
@@ -57,14 +55,14 @@ class Memograph:
 
         while True:
             time.sleep(memory_usage_refresh)
-            delta_mem = (resource.getrusage(resource.RUSAGE_SELF).ru_maxrss)\
-                        - start_mem
+            delta_mem = \
+                resource.getrusage(resource.RUSAGE_SELF).ru_maxrss - start_mem
 
             if delta_mem > max_memory:
                 max_memory = delta_mem
 
             # print(f'Memory Usage During Call: {delta_mem} B')
-            if mythread.isShutdown():
+            if mythread.is_shutdown():
                 # print(mythread.results.found_indexes)
                 break
 
@@ -77,7 +75,8 @@ class Tester(unittest.TestCase):
         text, pattern = Textgen('text.txt').generate(1000, 100)
         results = Memograph(finder.BruteForce).measure(text, pattern)
         print(f'{results}')
-        results = Memograph(finder.Hash, finder.Hash.RabinKarph).measure(text, pattern)
+        results = Memograph(finder.Hash,
+                            finder.Hash.RabinKarph).measure(text, pattern)
         print(f'{results}')
         results = Memograph(finder.KMP).measure(text, pattern)
         print(f'{results}')

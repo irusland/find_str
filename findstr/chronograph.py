@@ -1,7 +1,7 @@
 import time as timer
 import unittest
 import finder
-from textgen import *
+from textgen import Textgen
 
 
 class Chronograph:
@@ -10,7 +10,8 @@ class Chronograph:
         self.param = param
         self.generator = generator
 
-    def open_file(self):
+    @staticmethod
+    def open_file():
         with open('text.txt') as t:
             yield t.read()
         with open('pattern.txt') as p:
@@ -26,7 +27,8 @@ class Chronograph:
         assert result is not None, 'Result is None'
         return stop - start
 
-    def get_repetitions(self, time):
+    @staticmethod
+    def get_repetitions(time):
         return round(1 / time)
 
     def measure_accurate(self, t, p):

@@ -14,8 +14,8 @@ class Textgen:
         is_word = pattern_size == 0
         rnd_text = ''
         while len(rnd_text) < text_size:
-            id = random.randint(0, len(self.text_sources) - 1)
-            with open(self.text_sources[id]) as t:
+            pos = random.randint(0, len(self.text_sources) - 1)
+            with open(self.text_sources[pos]) as t:
                 text = t.read()
             a = random.randint(0, len(text))
             b = random.randint(0, len(text))

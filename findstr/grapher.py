@@ -1,8 +1,7 @@
-from mpl_toolkits.mplot3d import axes3d
 import matplotlib.pyplot as plot
 import numpy as np
-from chronograph import *
-from textgen import *
+from chronograph import Chronograph
+from textgen import Textgen
 from finder import *
 
 

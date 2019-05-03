@@ -1,8 +1,7 @@
 import collections
-import time as timer
-from result import *
+from result import Result
 import unittest
-from tests_source import *
+from tests_source import get_tests
 
 
 class BruteForce:

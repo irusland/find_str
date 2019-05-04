@@ -7,7 +7,7 @@ class SarrayTester(unittest.TestCase):
     def test_search(self):
         for test_name, text, pattern, expected in get_tests():
             with self.subTest(f'{test_name}'):
-                actual = SuffixArray(text).search(pattern)
+                actual = SuffixArray(pattern).search(text)
                 msg = f'\nTEXT: {text} :TEXT\nSUB: {pattern} :SUB'
                 self.assertCountEqual(expected, actual.found_indexes, msg)
 
@@ -21,7 +21,7 @@ class SarrayTester(unittest.TestCase):
                               ('na', 6),
                               ('nana', 4),
                               ('nanana', 2)], arr)
-        res = SuffixArray('bananana').search('ana')
+        res = SuffixArray('ana').search('bananana')
         self.assertListEqual(res.found_indexes, [1, 3, 5])
 
     def test_banana(self):
@@ -32,7 +32,7 @@ class SarrayTester(unittest.TestCase):
                               ('banana', 0),
                               ('na', 4),
                               ('nana', 2)], arr)
-        res = SuffixArray('banana').search('ana')
+        res = SuffixArray('ana').search('banana')
         self.assertListEqual(res.found_indexes, [1, 3])
 
     def test_abaab(self):
@@ -42,6 +42,6 @@ class SarrayTester(unittest.TestCase):
                               ('abaab', 0),
                               ('b', 4),
                               ('baab', 1)], arr)
-        res = SuffixArray('abaab').search('ab')
+        res = SuffixArray('ab').search('abaab')
         self.assertListEqual(res.found_indexes, [0, 3])
 

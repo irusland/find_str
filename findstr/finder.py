@@ -282,14 +282,13 @@ class KMP:
         return Result(indexes, collisions, "KMP")
 
 
-# TODO DELETE THIS
-import unittest
-
-
 class SuffixArray:
-    def __init__(self, text):
-        self.sarray = self.build_suffix_array(text)
-        self.text = text
+    """
+    Suffix Array algorithm preprocess a text string with making a suffix
+    array then uses a binary search to find left and right answer borders
+    """
+    def __init__(self, pattern):
+        self.pattern = pattern
 
     @staticmethod
     def build_suffix_array(text):
@@ -300,96 +299,40 @@ class SuffixArray:
         suffixes.sort(key=lambda tup: tup[0])
         return suffixes
 
-    def left_border(self, pattern):
-        """
-        'a', 'ana', 'anana', 'ananana', 'bananana'
-         0,    1,      2,        3,         4
-         ^
-
-         l = -1
-         r = 5
-         m = l + (r - l) / 2
-         m = 2
-
-         sarray[m] >= pattern
-         r = m = 2
-
-         m = 0
-
-         sarray[m] < pattern
-         l = m = 0
-
-         m = 1
-
-         sarray[m] >= pattern
-         r = m = 1
-
-         m = 0
-
-         sarray[m] < pattern
-         l = m = 0
-
-        """
-        l = -1
-        r = len(self.sarray)
-        while l < r:
-            m = int(l + (r - l) / 2)
-            if l + 1 == r:
+    def left_border(self, sarray):
+        left = -1
+        right = len(sarray)
+        while left < right:
+            m = int(left + (right - left) / 2)
+            if left + 1 == right:
                 break
-            if self.sarray[m][0] >= pattern:
-                r = m
-            if self.sarray[m][0] < pattern:
-                l = m
-        return l
+            if sarray[m][0] >= self.pattern:
+                right = m
+            if sarray[m][0] < self.pattern:
+                left = m
+        return left
 
-    def right_border(self, pattern):
-        """
-        'a', 'ana', 'anana', 'ananana', 'bananana'
-         0,    1,      2,        3,         4
-                                            ^
-
-         l = -1
-         r = 5
-         m = l + (r - l) / 2
-         m = 2
-
-         sarray[m] >= pattern
-         l = m = 2
-
-         m = 3
-
-         sarray[m] >= pattern
-         l = m = 3
-
-         m = 4
-
-         sarray[m] >= pattern
-         r = m = 1
-
-         m = 0
-
-         sarray[m] < pattern
-         l = m = 0
-
-        """
-        l = -1
-        r = len(self.sarray)
-        while l < r:
-            m = int(l + (r - l) / 2)
-            if l + 1 == r:
+    def right_border(self, sarray):
+        left = -1
+        right = len(sarray)
+        while left < right:
+            m = int(left + (right - left) / 2)
+            if left + 1 == right:
                 break
-            if self.sarray[m][0] >= pattern:
-                if self.sarray[m][0].startswith(pattern):
-                    l = m
+            if sarray[m][0] >= self.pattern:
+                if sarray[m][0].startswith(self.pattern):
+                    left = m
                 else:
-                    r = m
+                    right = m
             else:
-                l = m
+                left = m
 
-        return r
+        return right
 
-    def search(self, pattern):
-        left = self.left_border(pattern)
-        right = self.right_border(pattern)
+    def search(self, text):
+        sarray = self.build_suffix_array(text)
+        left = self.left_border(sarray)
+        right = self.right_border(sarray)
 
-        return Result([self.sarray[i][1] for i in range(right - 1, left, -1)])
+        return Result([sarray[i][1] for i in range(right - 1, left, -1)],
+                      0, "Suffix Array")

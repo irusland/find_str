@@ -47,9 +47,9 @@ class Memograph:
             mythread = Runner(self.algorithm,
                               text,
                               pattern)
-        mythread.start()
 
         start_mem = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
+        mythread.start()
         max_memory = 0
         memory_usage_refresh = .005
 

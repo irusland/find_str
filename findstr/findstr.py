@@ -37,7 +37,10 @@ def main():
                           'prepared pattern on every text but as we can see ' \
                           'there is recounting shift tables time delay\n' \
                           '* KMP works fine on average string its pretty ' \
-                          'stable\n'
+                          'stable\n' \
+                          '* Suffix Array has a text preprocessing that ' \
+                          'allows to work fast with O(n*log(n)) asymptotic ' \
+                          'on every pattern\n'
 
     summary = 'Summary:'
 
@@ -50,20 +53,21 @@ def main():
     print(finder.Automate.__doc__)
     print(finder.BoyerMoore.__doc__)
     print(finder.KMP.__doc__)
+    print(finder.SuffixArray.__doc__)
 
-    # grapher.build_graph()
+    grapher.build_graph()
 
     print(results_explanation)
     print()
     print(summary)
 
     sizes = [
-        (100000, 0),
+        # (100000, 0),
         (100, 10),
-        (1000, 100),
-        (10000, 1000),
-        (100000, 100),
-        (1000000, 100),
+        # (1000, 100),
+        # (10000, 1000),
+        # (100000, 100),
+        # (1000000, 100),
     ]
 
     for text_size, pattern_size in sizes:
@@ -76,16 +80,16 @@ def main():
              Memo(finder.BruteForce).measure(text, pattern)),
             ('Hash Linear',
              Chrono(finder.Hash,
-                    finder.Hash.Linear).measure_accurate(text, pattern),
-             Memo(finder.Hash, finder.Hash.Linear).measure(text, pattern)),
+                    finder.Linear).measure_accurate(text, pattern),
+             Memo(finder.Hash, finder.Linear).measure(text, pattern)),
             ('Hash Quad',
              Chrono(finder.Hash,
-                    finder.Hash.Quad).measure_accurate(text, pattern),
-             Memo(finder.Hash, finder.Hash.Quad).measure(text, pattern)),
+                    finder.Quad).measure_accurate(text, pattern),
+             Memo(finder.Hash, finder.Quad).measure(text, pattern)),
             ('Hash RK',
              Chrono(finder.Hash,
-                    finder.Hash.RabinKarph).measure_accurate(text, pattern),
-             Memo(finder.Hash, finder.Hash.RabinKarph).measure(text, pattern)),
+                    finder.RabinKarph).measure_accurate(text, pattern),
+             Memo(finder.Hash, finder.RabinKarph).measure(text, pattern)),
             ('Automate',
              Chrono(finder.Automate).measure_accurate(text, pattern),
              Memo(finder.Automate).measure(text, pattern)),
@@ -95,10 +99,15 @@ def main():
             ('KMP',
              Chrono(finder.KMP).measure_accurate(text, pattern),
              Memo(finder.KMP).measure(text, pattern)),
+            ('Suffix Array',
+             Chrono(finder.SuffixArray).measure_accurate(text, pattern),
+             Memo(finder.SuffixArray).measure(text, pattern)),
         ]
         results = sorted(results, key=lambda _: _[1])
         for name, time, memory in results:
             print(f'{name}\n\t%.6f S \n\t{memory} MB' % time)
+        print(f'Best: {results[0]}')
+        print(f'Worst: {results[-1]}')
 
 
 if __name__ == '__main__':

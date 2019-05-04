@@ -1,7 +1,5 @@
 import collections
 from result import Result
-import unittest
-from tests_source import get_tests
 
 
 class BruteForce:
@@ -26,15 +24,6 @@ class BruteForce:
             if logic:
                 found_indexes.append(i)
         return Result(found_indexes, collisions, BruteForce.__name__)
-
-
-class BruteForceTester(unittest.TestCase):
-    def test(self):
-        for test_name, text, pattern, expected in get_tests():
-            with self.subTest(f'{test_name}'):
-                actual = BruteForce(pattern).search(text).found_indexes
-                msg = f'\nTEXT: {text} :TEXT\nSUB: {pattern} :SUB'
-                self.assertListEqual(expected, actual, msg)
 
 
 class Hash:
@@ -72,105 +61,57 @@ class Hash:
         return Result(
             found_indexes, collisions, self.hash_method.__name__)
 
-    class Linear:
-        @staticmethod
-        def hash_shift(i, sample_length, current_hash, text):
-            result = current_hash
-            result -= ord(text[i - 1])
-            result += ord(text[i + sample_length - 1])
-            return result
 
-        @staticmethod
-        def get_hash(text, length):
-            hash_sum = 0
-            for i in range(length):
-                if i < len(text):
-                    hash_sum += ord(text[i])
-            return hash_sum
+class Linear:
+    @staticmethod
+    def hash_shift(i, sample_length, current_hash, text):
+        result = current_hash
+        result -= ord(text[i - 1])
+        result += ord(text[i + sample_length - 1])
+        return result
 
-    class Quad:
-        @staticmethod
-        def hash_shift(i, sample_length, current_hash, text):
-            result = current_hash
-            result -= ord(text[i - 1]) ** 2
-            result += ord(text[i + sample_length - 1]) ** 2
-            return result
-
-        @staticmethod
-        def get_hash(text, length):
-            hash_sum = 0
-            for i in range(length):
-                if i < len(text):
-                    hash_sum += ord(text[i]) ** 2
-            return hash_sum
-
-    class RabinKarph:
-        @staticmethod
-        def hash_shift(i, length, current_hash, text):
-            result = current_hash
-            result -= ord(text[i - 1]) * (2 ** (length - 1))
-            result *= 2
-            result += ord(text[i + length - 1])
-            return result
-
-        @staticmethod
-        def get_hash(text, length):
-            hash_sum = 0
-            for i in range(length):
-                if i < len(text):
-                    hash_sum += ord(text[i]) * (2 ** (length - i - 1))
-            return hash_sum
+    @staticmethod
+    def get_hash(text, length):
+        hash_sum = 0
+        for i in range(length):
+            if i < len(text):
+                hash_sum += ord(text[i])
+        return hash_sum
 
 
-class HashTester(unittest.TestCase):
-    def test_search(self):
-        hash_methods = [
-            Hash.Linear,
-            Hash.Quad,
-            Hash.RabinKarph
-        ]
-        for test_name, text, pattern, expected in get_tests():
-            for hash_method in hash_methods:
-                with self.subTest(f'{hash_method.__name__} {test_name}'):
-                    actual = Hash(pattern, hash_method).search(text)
-                    msg = f'\nTEXT: {text} :TEXT\nSUB: {pattern} :SUB'
-                    self.assertListEqual(expected, actual.found_indexes, msg)
+class Quad:
+    @staticmethod
+    def hash_shift(i, sample_length, current_hash, text):
+        result = current_hash
+        result -= ord(text[i - 1]) ** 2
+        result += ord(text[i + sample_length - 1]) ** 2
+        return result
 
-    def test_linear_hash(self):
-        hash_source = [
-            ('', 0),
-            ('a', 97),
-            ('aaa', 291),
-            ('abc', 294)
-        ]
-        for pattern, result in hash_source:
-            with self.subTest(f'{pattern}'):
-                actual = Hash.Linear.get_hash(pattern, len(pattern))
-                self.assertEqual(result, actual)
+    @staticmethod
+    def get_hash(text, length):
+        hash_sum = 0
+        for i in range(length):
+            if i < len(text):
+                hash_sum += ord(text[i]) ** 2
+        return hash_sum
 
-    def test_quad_hash(self):
-        hash_source = [
-            ('', 0),
-            ('a', 9409),
-            ('aaa', 28227),
-            ('abc', 28814)
-        ]
-        for pattern, result in hash_source:
-            with self.subTest(f'{pattern}'):
-                actual = Hash.Quad.get_hash(pattern, len(pattern))
-                self.assertEqual(result, actual)
 
-    def test_rk_hash(self):
-        hash_source = [
-            ('', 0),
-            ('a', 97),
-            ('aaa', 679),
-            ('abc', 683)
-        ]
-        for pattern, result in hash_source:
-            with self.subTest(f'{pattern}'):
-                actual = Hash.RabinKarph.get_hash(pattern, len(pattern))
-                self.assertEqual(result, actual)
+class RabinKarph:
+    @staticmethod
+    def hash_shift(i, length, current_hash, text):
+        result = current_hash
+        result -= ord(text[i - 1]) * (2 ** (length - 1))
+        result *= 2
+        result += ord(text[i + length - 1])
+        return result
+
+    @staticmethod
+    def get_hash(text, length):
+        hash_sum = 0
+        for i in range(length):
+            if i < len(text):
+                hash_sum += ord(text[i]) * (2 ** (length - i - 1))
+        return hash_sum
 
 
 class Automate:
@@ -215,30 +156,6 @@ class Automate:
                 found_indexes.append(i - sample_length + 1)
 
         return Result(found_indexes, collisions, 'Automate')
-
-
-class AutomateTester(unittest.TestCase):
-    def test_search(self):
-        for test_name, text, pattern, expected in get_tests():
-            with self.subTest(f'{test_name}'):
-                actual = Automate(pattern).search(text)
-                msg = f'\nTEXT: {text} :TEXT\nSUB: {pattern} :SUB'
-                self.assertListEqual(expected, actual.found_indexes, msg)
-
-    def test_table(self):
-        table_source = [
-            ('', {}),
-            ('a', {0: {'a': 1}, 1: {'a': 1}}),
-            ('aaa', {0: {'a': 1}, 1: {'a': 2}, 2: {'a': 3}, 3: {'a': 3}}),
-            ('abc', {0: {'a': 1, 'b': 0, 'c': 0},
-                     1: {'a': 1, 'b': 2, 'c': 0},
-                     2: {'a': 1, 'b': 0, 'c': 3},
-                     3: {'a': 1, 'b': 0, 'c': 0}})
-        ]
-        for pattern, result in table_source:
-            with self.subTest(f'{pattern}'):
-                actual = Automate(pattern).get_table()
-                self.assertDictEqual(result, actual)
 
 
 class BoyerMoore:
@@ -325,48 +242,6 @@ class BoyerMoore:
         return Result(indexes, collisions, 'Boyer moore')
 
 
-class BoyerMooreTester(unittest.TestCase):
-    def test_search(self):
-        for test_name, text, pattern, expected in get_tests():
-            with self.subTest(f'{test_name}'):
-                actual = BoyerMoore(pattern).search(text)
-                msg = f'\nTEXT: {text} :TEXT\nSUB: {pattern} :SUB'
-                self.assertListEqual(expected, actual.found_indexes, msg)
-
-    def test_bc_table(self):
-        table_source = [
-            ('a', {'a': 0}),
-            ('aaa', {'a': 0}),
-            ('abc', {'a': 2, 'b': 1, 'c': 0})
-        ]
-        for pattern, result in table_source:
-            with self.subTest(f'{pattern}'):
-                actual = BoyerMoore(pattern).bc_table
-                self.assertDictEqual(result, actual)
-
-    def test_gs_table(self):
-        table_source = [
-            ('a', {0: 1, 1: 1}),
-            ('aaa', {0: 3, 1: 2, 2: 1, 3: 1}),
-            ('abc', {0: 1, 1: 3, 2: 3, 3: 3})
-        ]
-        for pattern, result in table_source:
-            with self.subTest(f'{pattern}'):
-                actual = BoyerMoore(pattern).gs_table
-                self.assertDictEqual(result, actual)
-
-    def test_rpr_table(self):
-        table_source = [
-            ('a', {0: 1, 1: 0}),
-            ('aaa', {0: 1, 1: 1, 2: 1, 3: 0}),
-            ('abc', {0: 3, 1: 0, 2: -1, 3: -2})
-        ]
-        for pattern, result in table_source:
-            with self.subTest(f'{pattern}'):
-                actual = BoyerMoore(pattern).rpr
-                self.assertDictEqual(result, actual)
-
-
 class KMP:
     """
     KMP or Knuth-Morris-Pratt's algorithm builds shift table with least common
@@ -405,23 +280,3 @@ class KMP:
                 j = self.partial[j - 1]
 
         return Result(indexes, collisions, "KMP")
-
-
-class KMPTester(unittest.TestCase):
-    def test_search(self):
-        for test_name, text, pattern, expected in get_tests():
-            with self.subTest(f'{test_name}'):
-                actual = KMP(pattern).search(text)
-                msg = f'\nTEXT: {text} :TEXT\nSUB: {pattern} :SUB'
-                self.assertListEqual(expected, actual.found_indexes, msg)
-
-    def test_table(self):
-        table_source = [
-            ('a', [0]),
-            ('aaa', [0, 1, 2]),
-            ('abc', [0, 0, 0])
-        ]
-        for pattern, result in table_source:
-            with self.subTest(f'{pattern}'):
-                actual = KMP(pattern).partial
-                self.assertListEqual(result, actual)

@@ -67,16 +67,16 @@ class Memograph:
                 break
 
         # print("Memory Usage in Bytes: " + str(max_memory))
-        return round(max_memory / 2**20)
+        return round(max_memory)
 
 
-class Tester(unittest.TestCase):
-    def test_measure(self):
-        text, pattern = Textgen('text.txt').generate(1000, 100)
+class Measurer:
+    def measure(self):
+        text, pattern = Textgen('text.txt').generate(1000000, 1000000)
         results = Memograph(finder.BruteForce).measure(text, pattern)
         print(f'{results}')
-        results = Memograph(finder.Hash,
-                            finder.Hash.RabinKarph).measure(text, pattern)
-        print(f'{results}')
-        results = Memograph(finder.KMP).measure(text, pattern)
-        print(f'{results}')
+        # results = Memograph(finder.Hash,
+        #                     finder.Hash.RabinKarph).measure(text, pattern)
+        # print(f'{results}')
+        # results = Memograph(finder.KMP).measure(text, pattern)
+        # print(f'{results}')

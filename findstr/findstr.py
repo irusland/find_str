@@ -3,7 +3,7 @@ from chronograph import Chronograph as Chrono
 from memograph import Memograph as Memo
 import finder
 from textgen import Textgen
-import numpy
+import statistics
 
 
 def get_time(points):
@@ -11,7 +11,7 @@ def get_time(points):
     for t in points:
         for _, _, time in t:
             res.append(time)
-    return min(res), float(numpy.median(res)), max(res)
+    return min(res), float(statistics.median(res)), max(res)
 
 
 def main():
@@ -51,7 +51,7 @@ def main():
     print(finder.BoyerMoore.__doc__)
     print(finder.KMP.__doc__)
 
-    grapher.build_graph()
+    # grapher.build_graph()
 
     print(results_explanation)
     print()

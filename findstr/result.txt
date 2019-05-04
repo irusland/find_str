@@ -1,0 +1,167 @@
+This different substring search algorithms testingshows dependencies of a string preprocessing and other methods of search optimizing
+Processor: 3.4GHz Inter Core i5 
+Memory: 8 GB 1600 MHz DDR3 
+System: osx
+
+Documentation of following algorithms:
+
+    Brute Force algorithm associated simply comparing every
+    substring char and pattern char until match
+    
+
+    Hashing algorithm based on summarizing chars ordinals with a special
+    function to simplify strings comparison
+    
+
+    Automate algorithm has a preprocessing component it builds a table of
+    shifts out of pattern which is used during method execution
+    
+
+    Boyer Moore algorithm preprocess a pattern and builds shift tables for
+    "bad char" anb "good suffix" heuristics
+    
+
+    KMP or Knuth-Morris-Pratt's algorithm builds shift table with least common
+    subsequence method then uses it during search
+    
+Explanation:
+* Brute Force is pretty stable alghorithm, works every time with O(n^2) asymptotic
+* Hashes have a collision aspect that's why we can see an abrupt behavior change and time growthon a bad substring
+* Automate has a preprocessing aspect that's why we can see time growth
+* Boyer Moore algorithm works perfectly with prepared pattern on every text but as we can see there is recounting shift tables time delay
+* KMP works fine on average string its pretty stable
+
+
+Summary:
+Generated: Text Length = 100000, Pattern Size = 0
+Automate
+	0.018020 S 
+	0 MB
+Boyer Moore
+	0.021075 S 
+	0 MB
+KMP
+	0.025110 S 
+	0 MB
+Brute Force
+	0.059478 S 
+	0 MB
+Hash Linear
+	0.068352 S 
+	0 MB
+Hash RK
+	0.109113 S 
+	0 MB
+Hash Quad
+	0.146372 S 
+	0 MB
+Generated: Text Length = 100, Pattern Size = 10
+Automate
+	0.000021 S 
+	0 MB
+KMP
+	0.000029 S 
+	0 MB
+Boyer Moore
+	0.000051 S 
+	0 MB
+Brute Force
+	0.000053 S 
+	0 MB
+Hash Linear
+	0.000084 S 
+	0 MB
+Hash RK
+	0.000106 S 
+	0 MB
+Hash Quad
+	0.000130 S 
+	0 MB
+Generated: Text Length = 1000, Pattern Size = 100
+Automate
+	0.000165 S 
+	0 MB
+KMP
+	0.000257 S 
+	0 MB
+Boyer Moore
+	0.000348 S 
+	0 MB
+Brute Force
+	0.000549 S 
+	0 MB
+Hash Linear
+	0.000606 S 
+	0 MB
+Hash RK
+	0.000997 S 
+	0 MB
+Hash Quad
+	0.001249 S 
+	0 MB
+Generated: Text Length = 10000, Pattern Size = 1000
+Boyer Moore
+	0.001364 S 
+	0 MB
+Automate
+	0.001775 S 
+	0 MB
+KMP
+	0.002546 S 
+	0 MB
+Brute Force
+	0.005538 S 
+	0 MB
+Hash Linear
+	0.006165 S 
+	0 MB
+Hash RK
+	0.009935 S 
+	0 MB
+Hash Quad
+	0.012806 S 
+	0 MB
+Generated: Text Length = 100000, Pattern Size = 100
+Boyer Moore
+	0.015874 S 
+	0 MB
+Automate
+	0.017710 S 
+	0 MB
+KMP
+	0.026123 S 
+	0 MB
+Brute Force
+	0.058072 S 
+	0 MB
+Hash Linear
+	0.064703 S 
+	0 MB
+Hash RK
+	0.109687 S 
+	0 MB
+Hash Quad
+	0.140214 S 
+	0 MB
+Generated: Text Length = 1000000, Pattern Size = 100
+Automate
+	0.197588 S 
+	0 MB
+KMP
+	0.313316 S 
+	0 MB
+Boyer Moore
+	0.435750 S 
+	0 MB
+Brute Force
+	0.826931 S 
+	0 MB
+Hash Linear
+	0.898930 S 
+	0 MB
+Hash RK
+	1.999707 S 
+	0 MB
+Hash Quad
+	2.499230 S 
+	0 MB

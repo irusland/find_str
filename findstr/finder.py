@@ -280,3 +280,116 @@ class KMP:
                 j = self.partial[j - 1]
 
         return Result(indexes, collisions, "KMP")
+
+
+# TODO DELETE THIS
+import unittest
+
+
+class SuffixArray:
+    def __init__(self, text):
+        self.sarray = self.build_suffix_array(text)
+        self.text = text
+
+    @staticmethod
+    def build_suffix_array(text):
+        suffixes = []
+        for i in range(len(text)):
+            suffix = text[-(i + 1):]
+            suffixes.append((suffix, len(text) - i - 1))
+        suffixes.sort(key=lambda tup: tup[0])
+        return suffixes
+
+    def left_border(self, pattern):
+        """
+        'a', 'ana', 'anana', 'ananana', 'bananana'
+         0,    1,      2,        3,         4
+         ^
+
+         l = -1
+         r = 5
+         m = l + (r - l) / 2
+         m = 2
+
+         sarray[m] >= pattern
+         r = m = 2
+
+         m = 0
+
+         sarray[m] < pattern
+         l = m = 0
+
+         m = 1
+
+         sarray[m] >= pattern
+         r = m = 1
+
+         m = 0
+
+         sarray[m] < pattern
+         l = m = 0
+
+        """
+        l = -1
+        r = len(self.sarray)
+        while l < r:
+            m = int(l + (r - l) / 2)
+            if l + 1 == r:
+                break
+            if self.sarray[m][0] >= pattern:
+                r = m
+            if self.sarray[m][0] < pattern:
+                l = m
+        return l
+
+    def right_border(self, pattern):
+        """
+        'a', 'ana', 'anana', 'ananana', 'bananana'
+         0,    1,      2,        3,         4
+                                            ^
+
+         l = -1
+         r = 5
+         m = l + (r - l) / 2
+         m = 2
+
+         sarray[m] >= pattern
+         l = m = 2
+
+         m = 3
+
+         sarray[m] >= pattern
+         l = m = 3
+
+         m = 4
+
+         sarray[m] >= pattern
+         r = m = 1
+
+         m = 0
+
+         sarray[m] < pattern
+         l = m = 0
+
+        """
+        l = -1
+        r = len(self.sarray)
+        while l < r:
+            m = int(l + (r - l) / 2)
+            if l + 1 == r:
+                break
+            if self.sarray[m][0] >= pattern:
+                if self.sarray[m][0].startswith(pattern):
+                    l = m
+                else:
+                    r = m
+            else:
+                l = m
+
+        return r
+
+    def search(self, pattern):
+        left = self.left_border(pattern)
+        right = self.right_border(pattern)
+
+        return Result([self.sarray[i][1] for i in range(right - 1, left, -1)])

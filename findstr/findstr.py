@@ -55,11 +55,40 @@ def main():
     print(finder.KMP.__doc__)
     print(finder.SuffixArray.__doc__)
 
-    grapher.build_graph()
+    # grapher.build_graph()
 
     print(results_explanation)
     print()
     print(summary)
+
+    algorithms = [
+        finder.BruteForce,
+        finder.Linear,
+        finder.Quad,
+        finder.RabinKarph,
+        finder.Automate,
+        finder.BoyerMoore,
+        finder.KMP,
+        finder.SuffixArray
+    ]
+
+    for alg in algorithms:
+        t_best, p_best = Textgen('text.txt').generate_for(alg, best=True)
+        t_worst, p_worst = Textgen('text.txt').generate_for(alg, best=False)
+        if alg in [finder.Linear, finder.Quad, finder.RabinKarph]:
+            time_best, _ = Chrono(finder.Hash, alg).measure_accurate(
+                t_best, p_best)
+            time_worst, _ = Chrono(finder.Hash, alg).measure_accurate(
+                t_worst, p_worst)
+        else:
+            time_best, _ = Chrono(alg).measure_accurate(t_best, p_best)
+            time_worst, _ = Chrono(alg).measure_accurate(t_worst, p_worst)
+
+        print(f'{alg.__name__}'
+              f'\n\t{p_best} in {t_best}'
+              f'\n\tBest = {time_best}'
+              f'\n\t{p_worst} in {t_worst}'
+              f'\n\tWorst = {time_worst}\n')
 
     sizes = [
         # (100000, 0),
@@ -104,8 +133,8 @@ def main():
              Memo(finder.SuffixArray).measure(text, pattern)),
         ]
         results = sorted(results, key=lambda _: _[1])
-        for name, time, offset, memory in results:
-            print(f'{name}\n\t%.6f S \n\t{memory} MB' % time)
+        for name, time_offset, memory in results:
+            print(f'{name}\n\t%.6f S \n\t{memory} B' % time_offset[0])
         print(f'Best: {results[0]}')
         print(f'Worst: {results[-1]}')
 

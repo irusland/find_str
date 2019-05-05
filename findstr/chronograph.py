@@ -33,6 +33,8 @@ class Chronograph:
         sigma = 0
         for ti in times:
             sigma += (ti - t_) ** 2
+        if len(times) - 1 == 0:
+            return 1
         return ((1 / (len(times) - 1)) * sigma) ** 0.5
 
     def measure_accurate(self, t, p):

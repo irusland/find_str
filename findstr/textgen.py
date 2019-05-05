@@ -1,4 +1,5 @@
 import random
+import finder
 
 
 class Textgen:
@@ -6,6 +7,35 @@ class Textgen:
         if len(sources) == 0:
             raise ValueError('Source not found')
         self.text_sources = sources
+
+    n = 10000
+    
+    worst_cases = {
+        finder.BruteForce: (f'{"aba" * n}abc', 'abc'),
+        finder.Linear: (f'{"Zhd" * n}abc', 'abc'),
+        finder.Quad: (f'{"cba" * n}abc', 'abc'),
+        finder.RabinKarph: (f'{"aca" * n}abc', 'abc'),
+        finder.Automate: (f'{"abb" * n}abc', 'abc'),
+        finder.BoyerMoore: (f'{"ABCDAB ABCDABCDAB" * n}D', 'ABCDABD'),
+        finder.KMP: (f'{"ABC ABCDAB ABCDABCDAB" * n}D', 'ABCDABD'),
+        finder.SuffixArray: (f'{"a" * (n // 2)}{"b" * (n // 2)}', 'b'),
+    }
+
+    best_cases = {
+        finder.BruteForce: (f'abc{"ddd" * n}', 'abc'),
+        finder.Linear: (f'{"ddd" * n}abc', 'abc'),
+        finder.Quad: (f'{"ddd" * n}abc', 'abc'),
+        finder.RabinKarph: (f'{"ddd" * n}abc', 'abc'),
+        finder.Automate: (f'{"ccc" * n}abc', 'abc'),
+        finder.BoyerMoore: (f'{"D" * n}D', 'ABCDABD'),
+        finder.KMP: (f'{"D" * n}D', 'ABCDABD'),
+        finder.SuffixArray: (f'abc{"a" * n}', 'abc'),
+    }
+
+    def generate_for(self, algorithm, best=True):
+        if best:
+            return self.best_cases[algorithm]
+        return self.worst_cases[algorithm]
 
     def generate(self, text_size, pattern_size=0):
         if text_size < pattern_size:

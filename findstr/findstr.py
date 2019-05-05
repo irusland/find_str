@@ -63,7 +63,7 @@ def main():
 
     sizes = [
         # (100000, 0),
-        (100, 10),
+        # (100, 10),
         # (1000, 100),
         # (10000, 1000),
         # (100000, 100),
@@ -104,7 +104,7 @@ def main():
              Memo(finder.SuffixArray).measure(text, pattern)),
         ]
         results = sorted(results, key=lambda _: _[1])
-        for name, time, memory in results:
+        for name, time, offset, memory in results:
             print(f'{name}\n\t%.6f S \n\t{memory} MB' % time)
         print(f'Best: {results[0]}')
         print(f'Worst: {results[-1]}')

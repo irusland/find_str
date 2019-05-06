@@ -20,7 +20,7 @@ class ChronoTester(unittest.TestCase):
     def test_measure_accurate_small(self):
         c = Chronograph(finder.Hash, finder.Linear)
         t, p = 'aaabbbaba', 'ab'
-        times = [c.measure_accurate(t, p) for _ in range(10)]
+        times = [c.measure_accurate(t, p)[0] for _ in range(10)]
         base_time = times[0]
         count = 1
         for time in times:
@@ -35,7 +35,7 @@ class ChronoTester(unittest.TestCase):
         t, p = c.open_file()
         times = []
         for i in range(3):
-            times.append(c.measure_accurate(t, p))
+            times.append(c.measure_accurate(t, p)[0])
         base_time = times[0]
         count = 1
         for time in times:
@@ -48,7 +48,7 @@ class ChronoTester(unittest.TestCase):
     def test_measure_text_parts(self):
         c = Chronograph(finder.Hash, finder.Linear)
         t, p = Textgen('text.txt').generate(1000)
-        part_times = c.measure_text_parts(t, p, 3)
+        part_times, offset = c.measure_text_parts(t, p, 3)
         count = 0
         current = (0, 0, 0)
         for part in part_times:

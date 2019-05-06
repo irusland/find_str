@@ -55,7 +55,7 @@ def main():
     print(finder.KMP.__doc__)
     print(finder.SuffixArray.__doc__)
 
-    # grapher.build_graph()
+    grapher.build_graph()
 
     print(results_explanation)
     print()
@@ -85,18 +85,18 @@ def main():
             time_worst, _ = Chrono(alg).measure_accurate(t_worst, p_worst)
 
         print(f'{alg.__name__}'
-              f'\n\t{p_best} in {t_best}'
+              # f'\n\t{p_best} in {t_best}'
               f'\n\tBest = {time_best}'
-              f'\n\t{p_worst} in {t_worst}'
+              # f'\n\t{p_worst} in {t_worst}'
               f'\n\tWorst = {time_worst}\n')
 
     sizes = [
-        # (100000, 0),
-        # (100, 10),
-        # (1000, 100),
-        # (10000, 1000),
-        # (100000, 100),
-        # (1000000, 100),
+        (100000, 0),
+        (100, 10),
+        (1000, 100),
+        (10000, 1000),
+        (100000, 100),
+        (1000000, 100),
     ]
 
     for text_size, pattern_size in sizes:
@@ -135,8 +135,8 @@ def main():
         results = sorted(results, key=lambda _: _[1])
         for name, time_offset, memory in results:
             print(f'{name}\n\t%.6f S \n\t{memory} B' % time_offset[0])
-        print(f'Best: {results[0]}')
-        print(f'Worst: {results[-1]}')
+        # print(f'Best: {results[0]}')
+        # print(f'Worst: {results[-1]}')
 
 
 if __name__ == '__main__':

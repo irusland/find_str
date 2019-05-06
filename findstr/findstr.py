@@ -113,12 +113,10 @@ def main():
     can.drawText(textobject)
     can.save()
 
-    # page1.seek(0)
     output = PyPDF2.PdfFileWriter()
     pdf1 = PyPDF2.PdfFileReader(packet1)
     output.addPage(pdf1.getPage(0))
 
-    # GRAPH PAGES
     for alg, page in algorithms:
         packet = io.BytesIO()
         can = canvas.Canvas(packet, pagesize=letter)
@@ -154,10 +152,9 @@ def main():
         page.mergePage(graph)
         output.addPage(page)
 
-    outputStream = open("report.pdf", "wb")
-    output.write(outputStream)
-    outputStream.close()
-
+    output_stream = open("report.pdf", "wb")
+    output.write(output_stream)
+    output_stream.close()
 
     sizes = [
         # (100000, 0),

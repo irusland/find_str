@@ -28,7 +28,8 @@ class Chronograph:
     def get_repetitions(time):
         return round(1 / time)
 
-    def get_offset(self, times, cycles=1):
+    @staticmethod
+    def get_offset(times, cycles=1):
         t_ = sum(times) / cycles
         sigma = 0
         for ti in times:

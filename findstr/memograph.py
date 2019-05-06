@@ -21,12 +21,12 @@ class Memograph:
 
 
 class Measurer:
-    def measure(self):
+    @staticmethod
+    def measure():
         text, pattern = Textgen('text.txt').generate(1000000, 1000)
         print(f'{Memograph(finder.BruteForce).measure(text, pattern)}')
-        print(f'{Memograph(finder.Hash,finder.RabinKarph).measure(text, pattern)}')
         print(f'{Memograph(finder.KMP).measure(text, pattern)}')
 
 
 if __name__ == '__main__':
-    Measurer.measure(Measurer())
+    Measurer.measure()

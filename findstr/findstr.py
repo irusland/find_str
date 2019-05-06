@@ -96,7 +96,7 @@ def main():
     packet1 = io.BytesIO()
     can = canvas.Canvas(packet1, pagesize=letter)
     textobject = can.beginText()
-    textobject.setTextOrigin(30, 730)
+    textobject.setTextOrigin(30, 470)
 
     textobject.setFont('Courier-Bold', 12)
     textobject.textLines("\n".join(wrap(goal, 79)))

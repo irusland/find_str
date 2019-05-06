@@ -27,11 +27,6 @@ class BruteForce:
 
 
 class Hash:
-    """
-    Hashing algorithm based on summarizing chars ordinals with a special
-    function to simplify strings comparison
-    """
-
     def __init__(self, pattern, hash_method):
         self.pattern = pattern
         self.hash_method = hash_method
@@ -63,6 +58,10 @@ class Hash:
 
 
 class Linear:
+    """
+    Hashing algorithm based on summarizing chars ordinals
+    to simplify strings comparison
+    """
     @staticmethod
     def hash_shift(i, sample_length, current_hash, text):
         result = current_hash
@@ -80,6 +79,10 @@ class Linear:
 
 
 class Quad:
+    """
+    Hashing algorithm based on summarizing chars ordinals in square
+    to simplify strings comparison
+    """
     @staticmethod
     def hash_shift(i, sample_length, current_hash, text):
         result = current_hash
@@ -97,6 +100,10 @@ class Quad:
 
 
 class RabinKarph:
+    """
+    Hashing algorithm based on summarizing chars ordinals with special
+    Rabin Karph formula to simplify strings comparison
+    """
     @staticmethod
     def hash_shift(i, length, current_hash, text):
         result = current_hash

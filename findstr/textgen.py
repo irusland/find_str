@@ -29,7 +29,7 @@ class Textgen:
         finder.Automate: (f'{"ccc" * n}abc', 'abc'),
         finder.BoyerMoore: (f'{"D" * n}D', 'ABCDABD'),
         finder.KMP: (f'{"D" * n}D', 'ABCDABD'),
-        finder.SuffixArray: (f'abc{"a" * n}', 'abc'),
+        finder.SuffixArray: (f'abc{"a" * (n // 2)}', 'abc'),
     }
 
     def generate_for(self, algorithm, best=True):

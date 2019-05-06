@@ -79,7 +79,7 @@ def build_graph(text_size=0, pattern_size=0, part_count=0):
                 .measure_text_parts(text, pattern, part_count)
             sarray_points.append(points)
 
-    pp = PdfPages('foo.pdf')
+    pp = PdfPages('graphs.pdf')
 
     name = 'Brute Force'
     figure = plot.figure(name)
@@ -186,4 +186,4 @@ def build_graph(text_size=0, pattern_size=0, part_count=0):
     pp.savefig(figure)
 
     pp.close()
-    plot.show()
+    # plot.show()
